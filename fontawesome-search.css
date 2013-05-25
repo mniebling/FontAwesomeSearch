@@ -1,0 +1,82 @@
+/* FontAwesome include */
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+
+  src: url('font/fontawesome-webfont.eot?v=3.0.1');
+  src: url('font/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('font/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('font/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+}
+
+
+/* Structural */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 500px;
+  padding: 50px 0 0 0;
+  text-align: center;
+}
+
+.icon {
+	font-family: 'FontAwesome';
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+}
+
+#input-search {
+  margin: 0 auto;
+  width: 300px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+label {
+  display: block;
+  font-style: italic;
+  color: #666;
+  margin: 0 0 5px 0;
+}
+
+ul {
+  display: table;
+  border-collapse: collapse;
+  text-align: left;
+  margin: 50px auto;
+  padding: 0;
+  width: 300px;
+}
+
+li {
+  display: table-row;
+  list-style-type: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+li div {
+  display: table-cell;
+  padding: 2px 0;
+}
+
+div.icon {
+  font-size: 14px;
+  padding: 0 20px 0 0;
+}
+
+div.name {
+  font-size: 18px;
+  padding: 0 20px 0 0;
+}
+
+div.value {
+  color: #ccc;
+  font-size: 18px;
+  text-align: right;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Font Awesome Search</title>
+	<link href="fontawesome-search.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+	<div class="container">
+		<label for="input-search">Search FontAwesome:</label>
+		<input id="input-search" placeholder='Start typing an icon name' />
+
+		<section class="results">
+		</section>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="data/data.js"></script>
+	<script src="scripts/mustache.js"></script>
+	<script src="scripts/typeahead.js"></script>
+	<script src="scripts/fontawesome-search.js"></script>
+
+	<!-- Mustache template -->
+	<script type="text/html" id="tmpl">
+		<ul>
+			
+			{{#icons}}
+				<li data-icon-name='{{icon-name}}'>
+					<div class="icon">{{{icon-value}}}</div>
+					<div class="name">{{icon-name}}</div>
+					<div class="value">{{icon-value}}</div>
+				</li>
+			{{/icons}}
+
+		</ul>
+	</script>
+
+</body>
+</html>
