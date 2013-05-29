@@ -17,13 +17,19 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+html {
+  overflow-y: scroll; /* fix jumping layout when scrollbar appears/disappears */
+}
+
 .container {
   margin: 0 auto;
-  width: 500px;
+  width: 600px;
   padding: 50px 0 0 0;
   text-align: center;
 }
 
+
+/* Search results */
 .icon {
 	font-family: 'FontAwesome';
 	font-size: 14px;
@@ -32,7 +38,8 @@ body {
 
 #input-search {
   margin: 0 auto;
-  width: 300px;
+  padding: 0px 5px;
+  width: 290px;
   font-size: 16px;
   line-height: 28px;
 }
@@ -67,7 +74,7 @@ li div {
 
 div.icon {
   font-size: 14px;
-  padding: 0 20px 0 0;
+  width: 40px;
 }
 
 div.name {
