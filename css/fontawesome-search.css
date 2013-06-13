@@ -1,0 +1,115 @@
+/* FontAwesome include */
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+
+  src: url('../font/fontawesome-webfont.eot?v=3.0.1');
+  src: url('../font/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('../font/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('../font/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+}
+
+
+/* Structural & resets */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  overflow-y: scroll; /* fix jumping layout when scrollbar appears/disappears */
+}
+
+.container {
+  margin: 0 auto;
+  width: 600px;
+  padding: 50px 0 0 0;
+  text-align: center;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Search results */
+.icon {
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#input-search {
+  margin: 0 auto;
+  padding: 0px 5px;
+  width: 290px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+label {
+  display: block;
+  font-style: italic;
+  color: #666;
+  margin: 0 0 5px 0;
+}
+
+table.results {  
+  text-align: left;
+  border-collapse: collapse;
+  margin: 50px auto;
+  padding: 0;
+  width: 300px;
+}
+
+table.results tr {
+  margin-top: 4px;
+  padding-bottom: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* tr's don't show the hover styling */ 
+/* but we can trigger off tr:hover and style all the td's */
+table.results tr:hover td {
+  background-color: #f7f7f7;
+}
+
+td.icon {
+  font-size: 14px;
+  line-height: 24px;
+  width: 30px;
+}
+
+td.name {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+td.value {
+  color: #ccc;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: right;
+}
+
+
+/* About section */
+.about {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 13px;
+  color: #999;
+}
+
+.about a, 
+.about a:visited {
+  color: #999;
+}
+
+.about a:hover {
+  color: #666;
+}

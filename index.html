@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Font Awesome Search</title>
-	<link href="fontawesome-search.css" rel="stylesheet" type="text/css" />
+	<link href="css/fontawesome-search.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap-tooltip.css" rel="stylesheet" type="text/css" />
 </head>
 
 
@@ -16,25 +17,35 @@
 		</section>
 	</div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<div class="about">
+		<ul>
+			<li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 3.0.1.</li>
+			<li class="flash-message"></li>
+		</ul>
+
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 	<script src="data/data.js"></script>
 	<script src="scripts/mustache.js"></script>
-	<script src="scripts/typeahead.js"></script>
 	<script src="scripts/fontawesome-search.js"></script>
+	<script src="scripts/bootstrap-tooltip.min.js"></script>
+
 
 	<!-- Mustache template -->
 	<script type="text/html" id="tmpl">
-		<ul>
+		<table class="results">
 			
 			{{#icons}}
-				<li data-icon-name='{{icon-name}}'>
-					<div class="icon">{{{icon-value}}}</div>
-					<div class="name">{{icon-name}}</div>
-					<div class="value">{{icon-value}}</div>
-				</li>
+				<tr data-icon-name="{{icon-name}}" data-toggle="tooltip" data-title="{{{icon-value}}}">
+					<td class="icon">{{{icon-value}}}</td>
+					<td class="name">{{icon-name}}</td>
+					<td class="value">{{icon-value}}</td>
+				</tr>
 			{{/icons}}
 
-		</ul>
+		</table>
 	</script>
 
 </body>

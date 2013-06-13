@@ -12,6 +12,11 @@
 
 
 
+		// Init bootstrap lib for killer tooltips
+		$('tr').tooltip({ placement: 'right' });
+
+
+
 		// I guess I'll write my own jankety typeahead
 		$('#input-search').keyup(function () {
 
@@ -19,7 +24,7 @@
 
 			// Check all the li's to see if they match the search
 			// If not, hide them 
-			$('li').each(function (index, value) {
+			$('tr').each(function (index, value) {
 
 				if($(this).attr('data-icon-name').indexOf(target) != -1) {
 					$(this).fadeIn('fast');
@@ -28,6 +33,7 @@
 					$(this).fadeOut('fast');
 				}
 			});
+
 
 		});
 	});
