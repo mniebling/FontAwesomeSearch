@@ -18,7 +18,7 @@
 
 
 		// I guess I'll write my own jankety typeahead
-		$('#input-search').keyup(function () {
+		function updateTypeahead () {
 
 			var target = $('#input-search').val();
 
@@ -33,8 +33,28 @@
 					$(this).fadeOut('fast');
 				}
 			});
+		}
 
 
+
+		// update the typeahead when the user types in the box
+		$('#input-search').on('keyup', updateTypeahead);
+
+
+		// update the typeahead when the user changes the hash
+		$(window).on('hashchange', function () {
+
+			$('#input-search').val((window.location.hash).slice(1));
+			updateTypeahead();
 		});
+
+
+		// update the typeahead when the user arrives at the page with a hash
+		if(window.location.hash != "") {
+
+			$('#input-search').val((window.location.hash).slice(1));
+			updateTypeahead();
+		}
+
 	});
 }(window.jQuery));
