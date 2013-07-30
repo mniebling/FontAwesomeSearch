@@ -1,12 +1,12 @@
 FontAwesomeSearch
 =================
-FontAwesomeSearch is a simple website that allows you to perform text searches on the descriptions of FontAwesome icons.
+FontAwesomeSearch is a simple [website](http://mniebling.github.io/FontAwesomeSearch/) that allows you to perform text searches on the descriptions of FontAwesome icons.
 
 
 
 #### Why is this better than the FontAwesome Cheatsheet?
 
-By itself, it's not really. Before I made this website, I would bring up the cheatsheet and `CTRL+F` for the icon I wanted, then copy it to the clipboard.
+By itself, it's not really. Before I made this website, I would bring up the [cheatsheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) and `CTRL+F` for the icon I wanted, then copy it to the clipboard.
 
 However, I also use [Alfred](http://www.alfredapp.com/), the excellent OSX launcher app, and I always wished I could search straight from its prompt. Because FontAwesomeSearch optionally looks at the window hash for search terms, I can now type this:
 
