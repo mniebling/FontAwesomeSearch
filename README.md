@@ -4,8 +4,8 @@ FontAwesomeSearch is a simple website that allows you to perform text searches o
 
 
 
-Why is this better than the FontAwesome Cheatsheet?
----------------------------------------------------
+*** Why is this better than the FontAwesome Cheatsheet?
+
 By itself, it's not really. Before I made this website, I would bring up the cheatsheet and `CTRL+F` for the icon I wanted, then copy it to the clipboard.
 
 However, I also use [Alfred](http://www.alfredapp.com/), the excellent OSX launcher app, and I always wished I could search straight from its prompt. Because FontAwesomeSearch optionally looks at the window hash for search terms, I can now type this:
@@ -19,8 +19,8 @@ However, I also use [Alfred](http://www.alfredapp.com/), the excellent OSX launc
 Kakow!
 
 
-Setting up the query in Alfred
-------------------------------
+*** Setting up the query in Alfred
+
 Just paste this into the "Search URL" field of an Alfred custom search entry:
 
 `http://mniebling.github.io/FontAwesomeSearch/#{query}`
