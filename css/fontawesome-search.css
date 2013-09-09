@@ -4,10 +4,10 @@
   font-weight: normal;
   font-style: normal;
 
-  src: url('../font/fontawesome-webfont.eot?v=3.0.1');
-  src: url('../font/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
-    url('../font/fontawesome-webfont.woff?v=3.0.1') format('woff'),
-    url('../font/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  src: url('../font/fontawesome-webfont.eot?v=3.2.1');
+  src: url('../font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'),
+    url('../font/fontawesome-webfont.woff?v=3.2.1') format('woff'),
+    url('../font/fontawesome-webfont.ttf?v=3.2.1') format('truetype');
 }
 
 
@@ -86,6 +86,15 @@ td.icon {
 td.name {
   font-size: 18px;
   line-height: 24px;
+}
+
+td.name a {
+  color: #222;
+  text-decoration: none;
+}
+
+td.name a:hover {
+  text-decoration: underline;
 }
 
 td.value {

@@ -24,9 +24,7 @@
 	<div class="about">
 		<ul>
 			<li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 3.2.1.</li>
-			<li class="flash-message"></li>
 		</ul>
-
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
@@ -43,7 +41,9 @@
 			{{#icons}}
 				<tr data-icon-name="{{icon-name}}" data-toggle="tooltip" data-title="{{{icon-value}}}">
 					<td class="icon">{{{icon-value}}}</td>
-					<td class="name">{{icon-name}}</td>
+					<td class="name">
+						<a href="http://fortawesome.github.io/Font-Awesome/icon/{{icon-name}}">{{icon-name}}</a>
+					</td>
 					<td class="value">{{icon-value}}</td>
 				</tr>
 			{{/icons}}
