@@ -6,7 +6,7 @@
 		// Initial fetch & render the icons into the HTML
 		// so we can work with them as the user searches
 		var iconJSON = window.icondata || {},
-				tmpl = $('#tmpl').html();
+			tmpl = $('#tmpl').html();
 
 		$('.results').html(window.Mustache.render(tmpl, iconJSON));
 
@@ -20,19 +20,29 @@
 		// I guess I'll write my own jankety typeahead
 		function updateTypeahead () {
 
-			var target = $('#input-search').val();
+			var target = $('#input-search').val(),
+				listIsEmpty = true;
 
 			// Check all the li's to see if they match the search
 			// If not, hide them 
-			$('tr').each(function (index, value) {
+			$('tr.icon-row').each(function (index, value) {
 
 				if($(this).attr('data-icon-name').indexOf(target) != -1) {
 					$(this).fadeIn('fast');
+					listIsEmpty = false;
 				}
 				else {
 					$(this).fadeOut('fast');
 				}
 			});
+
+			// If there are no li's visible, show the blank slate
+			if(listIsEmpty) {
+				$('.blank-slate').fadeIn('fast');
+			}
+			else {
+				$('.blank-slate').fadeOut('fast');
+			}
 		}
 
 
@@ -50,7 +60,7 @@
 
 
 		// update the typeahead when the user arrives at the page with a hash
-		if(window.location.hash != "") {
+		if(window.location.hash !== "") {
 
 			$('#input-search').val((window.location.hash).slice(1));
 			updateTypeahead();

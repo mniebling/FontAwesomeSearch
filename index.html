@@ -16,8 +16,7 @@
 		<label for="input-search">Search FontAwesome:</label>
 		<input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
 
-		<section class="results">
-		</section>
+		<section class="results"></section>
 	</div>
 
 
@@ -40,7 +39,7 @@
 		<table class="results">
 			
 			{{#icons}}
-				<tr data-icon-name="{{icon-name}}" data-toggle="tooltip" data-title="{{{icon-value}}}">
+				<tr class="icon-row" data-icon-name="{{icon-name}}" data-toggle="tooltip" data-title="{{{icon-value}}}">
 					<td class="icon">{{{icon-value}}}</td>
 					<td class="name">
 						<a href="http://fortawesome.github.io/Font-Awesome/icon/{{icon-name}}">{{icon-name}}</a>
@@ -48,6 +47,8 @@
 					<td class="value">{{icon-value}}</td>
 				</tr>
 			{{/icons}}
+
+			<tr class="blank-slate"><td colspan="3">No icons match that search.</td></tr>
 
 		</table>
 	</script>

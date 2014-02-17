@@ -105,6 +105,22 @@ td.value {
 }
 
 
+/* Blank slate */
+.blank-slate {
+  display: none;
+
+  width: 290px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px dotted #999;
+  background-color: #efefef;
+}
+
+.blank-slate td {
+  padding: 15px 0;
+}
+
+
 /* About section */
 .about {
   position: fixed;
