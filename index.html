@@ -22,8 +22,8 @@
 
 	<div class="about">
 		<ul>
-			<li><a href="https://github.com/mniebling/FontAwesomeSearch">View this site on GitHub</a></li>
-			<li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.0.3.</li>
+			<li><a href="https://github.com/mniebling/FontAwesomeSearch">View this project on GitHub</a></li>
+			<li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.1.0.</li>
 		</ul>
 	</div>
 
@@ -42,7 +42,9 @@
 				<tr class="icon-row" data-icon-name="{{icon-name}}" data-toggle="tooltip" data-title="{{{icon-value}}}">
 					<td class="icon">{{{icon-value}}}</td>
 					<td class="name">
-						<a href="http://fortawesome.github.io/Font-Awesome/icon/{{icon-name}}">{{icon-name}}</a>
+						<a href="http://fortawesome.github.io/Font-Awesome/icon/{{icon-name}}">
+							{{icon-name}}{{#aliases}}, {{aliases}}{{/aliases}}
+						</a>
 					</td>
 					<td class="value">{{icon-value}}</td>
 				</tr>
