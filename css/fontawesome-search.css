@@ -14,18 +14,27 @@
 /* Structural & resets */
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Archivo Narrow', Arial, sans-serif;
 }
 
 html {
   overflow-y: scroll; /* fix jumping layout when scrollbar appears/disappears */
 }
 
-.container {
-  margin: 0 auto;
-  width: 600px;
-  padding: 50px 0 0 0;
+section.search-input {
+  position: fixed;
+  top: 0;
+  padding: 40px 0 15px 0;
+  width: 100%;
   text-align: center;
+
+  background-color: #94BA65;
+  border-bottom: 2px solid #729843;
+}
+
+section.results {
+  margin: 130px auto 0 auto;
+  width: 600px;
 }
 
 ul, li {
@@ -44,16 +53,26 @@ ul, li {
 
 #input-search {
   margin: 0 auto;
-  padding: 0px 5px;
-  width: 290px;
+  padding: 5px;
+  width: 300px;
+  font-family: 'Archivo Narrow', Arial, sans-serif;
   font-size: 16px;
-  line-height: 28px;
+  border: 1px solid #729843;
+
+  /* normalize padding */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#input-search:focus {
+  outline-color: #729843;
 }
 
 label {
   display: block;
-  font-style: italic;
-  color: #666;
+  color: #353432;
+  font-size: 18px;
   margin: 0 0 5px 0;
 }
 
@@ -62,7 +81,7 @@ table.results {
   border-collapse: collapse;
   margin: 50px auto;
   padding: 0;
-  width: 420px;
+  width: 340px;
 }
 
 table.results tr {
@@ -84,7 +103,7 @@ td.icon {
 }
 
 td.name {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
 }
 
@@ -99,7 +118,7 @@ td.name a:hover {
 
 td.value {
   color: #ccc;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   text-align: right;
 }
@@ -126,15 +145,15 @@ td.value {
   position: fixed;
   top: 10px;
   left: 10px;
-  font-size: 13px;
-  color: #999;
+  font-size: 14px;
+  color: #565;
 }
 
 .about a, 
 .about a:visited {
-  color: #999;
+  color: #565;
 }
 
 .about a:hover {
-  color: #666;
+  color: #333;
 }
