@@ -6,7 +6,9 @@
     // Initial fetch & render the icons into the HTML
     // so we can work with them as the user searches
     var iconJSON = window.icondata || {},
-      tmpl = $('#tmpl').html();
+      tmpl = $('#tmpl').html(),
+      // ms duration for Velocity animations
+      DURATION = 75;
 
     $('.results').html(window.Mustache.render(tmpl, iconJSON));
 
@@ -37,20 +39,37 @@
 
         if(name.indexOf(target) != -1 || aliases.indexOf(target) != -1) {
 
-          $('#' + name).fadeIn('fast');
+          fadeInIfNecessary($('#' + name));
           listIsEmpty = false;
         }
         else {
-          $('#' + name).fadeOut('fast');
+          fadeOutIfNecessary($('#' + name));
         }
       }
 
       // If there are no li's visible, show the blank slate
       if(listIsEmpty) {
-        $blankSlate.fadeIn('fast');
+        fadeInIfNecessary($blankSlate);
       }
       else {
-        $blankSlate.fadeOut('fast');
+        fadeOutIfNecessary($blankSlate);
+      }
+    }
+
+    // Velocity animation wrappers
+    function fadeOutIfNecessary($elem) {
+
+      if($elem.css('display') != 'none') {
+
+        $elem.velocity('fadeOut', { duration: DURATION });
+      }
+    }
+
+    function fadeInIfNecessary($elem) {
+
+      if($elem.css('display') === 'none') {
+
+        $elem.velocity('fadeIn', { duration: DURATION });
       }
     }
 
