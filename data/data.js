@@ -83,7 +83,7 @@
     },{ 'iconValue': '&#xf04b;', 'iconName': 'play'
     },{ 'iconValue': '&#xf04c;', 'iconName': 'pause'
     },{ 'iconValue': '&#xf04d;', 'iconName': 'stop'
-    },{ 'iconValue': '&#xf04e;', 'iconName': 'forward04e'
+    },{ 'iconValue': '&#xf04e;', 'iconName': 'forward'
     },{ 'iconValue': '&#xf050;', 'iconName': 'fast-forward'
     },{ 'iconValue': '&#xf051;', 'iconName': 'step-forward'
     },{ 'iconValue': '&#xf052;', 'iconName': 'eject'
