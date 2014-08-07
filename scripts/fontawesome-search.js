@@ -24,7 +24,7 @@
         $blankSlate = $('.blank-slate'),
         listIsEmpty = true,
         // easier to work with an array than the json object
-        icons       = iconJSON.icons
+        icons       = iconJSON.icons;
 
 
       // Check all the data to see if they match the search
