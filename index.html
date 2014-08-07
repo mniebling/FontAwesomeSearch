@@ -14,14 +14,14 @@
 
 <body>
 
-	
+
 		<section class="search-input">
 			<label for="input-search">Search FontAwesome:</label>
 			<input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
 		</section>
 
 		<section class="results"></section>
-	
+
 
 
 	<div class="about">
@@ -41,16 +41,16 @@
 	<!-- Mustache template -->
 	<script type="text/html" id="tmpl">
 		<table class="results">
-			
+
 			{{#icons}}
-				<tr class="icon-row" data-icon-name="{{icon-name}}" data-toggle="tooltip" data-title="{{{icon-value}}}">
-					<td class="icon">{{{icon-value}}}</td>
+				<tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-title="{{{iconValue}}}">
+					<td class="icon">{{{iconValue}}}</td>
 					<td class="name">
-						<a href="http://fortawesome.github.io/Font-Awesome/icon/{{icon-name}}">
-							{{icon-name}}{{#aliases}}, {{aliases}}{{/aliases}}
+						<a href="http://fortawesome.github.io/Font-Awesome/icon/{{iconName}}">
+							{{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}
 						</a>
 					</td>
-					<td class="value">{{icon-value}}</td>
+					<td class="value">{{iconValue}}</td>
 				</tr>
 			{{/icons}}
 

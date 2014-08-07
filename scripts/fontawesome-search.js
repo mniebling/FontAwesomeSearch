@@ -20,28 +20,37 @@
     // I guess I'll write my own jankety typeahead
     function updateTypeahead () {
 
-      var target = $('#input-search').val(),
-        listIsEmpty = true;
+      var target    = $('#input-search').val(),
+        $blankSlate = $('.blank-slate'),
+        listIsEmpty = true,
+        // easier to work with an array than the json object
+        icons       = iconJSON.icons
 
-      // Check all the rows to see if they match the search
-      // If not, hide them
-      $('tr.icon-row').each(function (index, value) {
 
-        if($(this).find('.name a').text().indexOf(target) != -1) {
-          $(this).fadeIn('fast');
+      // Check all the data to see if they match the search
+      // If not, hide the respective table row
+      for (var i = 0, max = icons.length; i < max; i++) {
+
+        // Every row has a name, but not all rows have aliases
+        var name  = icons[i].iconName,
+          aliases = icons[i].aliases || "";
+
+        if(name.indexOf(target) != -1 || aliases.indexOf(target) != -1) {
+
+          $('#' + name).fadeIn('fast');
           listIsEmpty = false;
         }
         else {
-          $(this).fadeOut('fast');
+          $('#' + name).fadeOut('fast');
         }
-      });
+      }
 
       // If there are no li's visible, show the blank slate
       if(listIsEmpty) {
-        $('.blank-slate').fadeIn('fast');
+        $blankSlate.fadeIn('fast');
       }
       else {
-        $('.blank-slate').fadeOut('fast');
+        $blankSlate.fadeOut('fast');
       }
     }
 
