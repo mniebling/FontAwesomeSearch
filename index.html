@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Font Awesome Search</title>
+  <title>Font Awesome Search</title>
 
-	<link href="/FontAwesomeSearch/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="/FontAwesomeSearch/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-	<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet' type='text/css'>
 
-	<link href="css/fontawesome-search.css" rel="stylesheet" type="text/css" />
-	<link href="css/bootstrap-tooltip.css" rel="stylesheet" type="text/css" />
+  <link href="css/fontawesome-search.css" rel="stylesheet" type="text/css" />
+  <link href="css/bootstrap-tooltip.css" rel="stylesheet" type="text/css" />
 </head>
 
 
 <body>
 
+    <section class="search-input">
+      <label for="input-search">Search FontAwesome:</label>
+      <input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
+    </section>
 
-		<section class="search-input">
-			<label for="input-search">Search FontAwesome:</label>
-			<input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
-		</section>
-
-		<section class="results"></section>
-
+    <section class="results"></section>
 
 
-	<div class="about">
-		<ul>
-			<li><a href="https://github.com/mniebling/FontAwesomeSearch">View this project on GitHub</a></li>
-			<li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.1.0.</li>
-		</ul>
-	</div>
+  <div class="about">
+    <ul>
+      <li><a href="https://github.com/mniebling/FontAwesomeSearch">View this project on GitHub</a></li>
+      <li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.1.0.</li>
+    </ul>
+  </div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-	<script src="data/data.js"></script>
-	<script src="scripts/mustache.js"></script>
-	<script src="scripts/fontawesome-search.js"></script>
-	<script src="scripts/bootstrap-tooltip.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+  <script src="data/data.js"></script>
+  <script src="scripts/mustache.js"></script>
+  <script src="scripts/fontawesome-search.js"></script>
+  <script src="scripts/bootstrap-tooltip.min.js"></script>
 
 
-	<!-- Mustache template -->
-	<script type="text/html" id="tmpl">
-		<table class="results">
+  <!-- Mustache template -->
+  <script type="text/html" id="tmpl">
+    <table class="results">
 
-			{{#icons}}
-				<tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-title="{{{iconValue}}}">
-					<td class="icon">{{{iconValue}}}</td>
-					<td class="name">
-						<a href="http://fortawesome.github.io/Font-Awesome/icon/{{iconName}}">
-							{{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}
-						</a>
-					</td>
-					<td class="value">{{iconValue}}</td>
-				</tr>
-			{{/icons}}
+      {{#icons}}
+        <tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-title="{{{iconValue}}}">
+          <td class="icon">{{{iconValue}}}</td>
+          <td class="name">
+            <a href="http://fortawesome.github.io/Font-Awesome/icon/{{iconName}}">
+              {{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}
+            </a>
+          </td>
+          <td class="value">{{iconValue}}</td>
+        </tr>
+      {{/icons}}
 
-			<tr class="blank-slate"><td colspan="3">No icons match that search.</td></tr>
+      <tr class="blank-slate"><td colspan="3">No icons match that search.</td></tr>
 
-		</table>
-	</script>
+    </table>
+  </script>
 
 </body>
 </html>
