@@ -3,18 +3,24 @@
 
   $(function () {
 
-    // Initial fetch & render the icons into the HTML
-    // so we can work with them as the user searches
+    // grab the icons
     var iconJSON = window.icondata || {},
-      tmpl = $('#tmpl').html(),
-      // ms duration for Velocity animations
-      DURATION = 75;
+        icons    = iconJSON.icons,
 
+        // mustache template for rendering the list
+        tmpl = $('#tmpl').html(),
+
+        // dom references
+        $inputSearch = $('#input-search'),
+        $blankSlate  = $('.blank-slate'),
+
+        // ms duration for Velocity animations
+        DURATION = 75;
+
+
+
+    // Initialize markup stuff
     $('.results').html(window.Mustache.render(tmpl, iconJSON));
-
-
-
-    // Init bootstrap lib for killer tooltips
     $('tr').tooltip({ placement: 'right' });
 
 
@@ -22,12 +28,8 @@
     // I guess I'll write my own jankety typeahead
     function updateTypeahead () {
 
-      var target    = $('#input-search').val(),
-        $blankSlate = $('.blank-slate'),
-        listIsEmpty = true,
-        // easier to work with an array than the json object
-        icons       = iconJSON.icons;
-
+      var target      = $inputSearch.val(),
+          listIsEmpty = true;
 
       // Check all the data to see if they match the search string
       for (var i = 0, max = icons.length; i < max; i++) {
