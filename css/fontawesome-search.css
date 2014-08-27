@@ -27,9 +27,10 @@ section.search-input {
   padding: 40px 0 15px 0;
   width: 100%;
   text-align: center;
+  color: #3A6E43;
 
-  background-color: #94BA65;
-  border-bottom: 2px solid #729843;
+  border-bottom: 2px solid #7F9984;
+  background-color: #BFE5C6;
 }
 
 section.results {
@@ -57,7 +58,7 @@ ul, li {
   width: 300px;
   font-family: 'Archivo Narrow', Arial, sans-serif;
   font-size: 16px;
-  border: 1px solid #729843;
+  border: 1px solid #7F9984;
 
   /* normalize padding */
   -webkit-box-sizing: border-box;
@@ -66,17 +67,16 @@ ul, li {
 }
 
 #input-search:focus {
-  outline-color: #729843;
+  outline-color: #7F9984;
 }
 
 label {
   display: block;
-  color: #353432;
   font-size: 18px;
   margin: 0 0 5px 0;
 }
 
-table.results {  
+table.results {
   text-align: left;
   border-collapse: collapse;
   margin: 50px auto;
@@ -90,7 +90,7 @@ table.results tr {
   border-top: 1px solid #ccc;
 }
 
-/* tr's don't show the hover styling */ 
+/* tr's don't show the hover styling */
 /* but we can trigger off tr:hover and style all the td's */
 table.results tr:hover td {
   background-color: #f7f7f7;
@@ -146,14 +146,14 @@ td.value {
   top: 10px;
   left: 10px;
   font-size: 14px;
-  color: #565;
+  color: #3A6E43;
 }
 
-.about a, 
+.about a,
 .about a:visited {
-  color: #565;
+  color: #3A6E43;
 }
 
 .about a:hover {
-  color: #333;
+  color: #234329;
 }
