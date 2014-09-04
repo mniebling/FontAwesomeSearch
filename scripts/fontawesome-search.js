@@ -18,6 +18,19 @@
         DURATION = 75;
 
 
+    // Sort the icons by name, A-to-Z
+    icons.sort(function(a, b) {
+
+      if (a.iconName < b.iconName) {
+        return -1;
+      }
+      if (a.iconName > b.iconName) {
+        return 1;
+      }
+      return 0;
+    });
+
+
     // Initialize markup stuff
     $('.results').append(window.Mustache.render(tmpl, iconJSON));
     $('tr').tooltip({ placement: 'right' });
