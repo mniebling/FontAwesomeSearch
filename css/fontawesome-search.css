@@ -131,16 +131,14 @@ td.value {
 .blank-slate {
   display: none;
 
-  width: 290px;
+  width: 300px;
   margin: 0 auto;
+  padding: 15px 0;
   text-align: center;
   border: 1px dotted #999;
   background-color: #efefef;
 }
 
-.blank-slate td {
-  padding: 15px 0;
-}
 
 
 /* About section */

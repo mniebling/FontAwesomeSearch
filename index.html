@@ -19,7 +19,9 @@
       <input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
     </section>
 
-    <section class="results"></section>
+    <section class="results">
+      <div class="blank-slate">No icons match that search.</div>
+    </section>
 
 
   <div class="about">
@@ -52,8 +54,6 @@
           <td class="value">{{iconValue}}</td>
         </tr>
       {{/icons}}
-
-      <tr class="blank-slate"><td colspan="3">No icons match that search.</td></tr>
 
     </table>
   </script>
