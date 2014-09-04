@@ -18,9 +18,8 @@
         DURATION = 75;
 
 
-
     // Initialize markup stuff
-    $('.results').html(window.Mustache.render(tmpl, iconJSON));
+    $('.results').append(window.Mustache.render(tmpl, iconJSON));
     $('tr').tooltip({ placement: 'right' });
 
 

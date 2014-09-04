@@ -28,10 +28,11 @@ section.search-input {
   padding: 40px 0 15px 0;
   width: 100%;
   text-align: center;
-  color: #3A6E43;
+  color: #10523A;
 
-  border-bottom: 2px solid #7F9984;
+  border-bottom: 2px solid #157050;
   background-color: #BFE5C6;
+  background-image: linear-gradient(30deg, #1D976C, #93F9B9);
 }
 
 section.results {
@@ -70,7 +71,7 @@ ul, li {
 }
 
 #input-search:focus {
-  outline-color: #7F9984;
+  outline-color: #318C53;
 }
 
 label {
@@ -131,16 +132,14 @@ td.value {
 .blank-slate {
   display: none;
 
-  width: 290px;
+  width: 300px;
   margin: 0 auto;
+  padding: 15px 0;
   text-align: center;
   border: 1px dotted #999;
   background-color: #efefef;
 }
 
-.blank-slate td {
-  padding: 15px 0;
-}
 
 
 /* About section */
@@ -149,14 +148,14 @@ td.value {
   top: 10px;
   left: 10px;
   font-size: 14px;
-  color: #3A6E43;
+  color: #BBFCD3;
 }
 
 .about a,
 .about a:visited {
-  color: #3A6E43;
+  color: #BBFCD3;
 }
 
 .about a:hover {
-  color: #234329;
+  color: #A1E6BA;
 }
