@@ -10,12 +10,11 @@
         // mustache template for rendering the list
         tmpl = $('#tmpl').html(),
 
-        // dom references
-        $inputSearch = $('#input-search'),
-        $blankSlate  = $('.blank-slate'),
-
         // ms duration for Velocity animations
-        DURATION = 75;
+        DURATION = 75,
+
+        // iterator for the typeahead
+        key = '';
 
 
     // Sort the icons by name, A-to-Z
@@ -36,6 +35,23 @@
     $('tr').tooltip({ placement: 'right' });
 
 
+    // dom references
+    var $inputSearch = $('#input-search'),
+        $blankSlate  = $('.blank-slate');
+
+
+    // Set up a dictionary of names and elements
+    var nameToElement = {};
+
+    $('tr.icon-row').each(function(index) {
+
+      var nameAndAliases = $(this).find('a').text().trim();
+      nameToElement[nameAndAliases] = this;
+    });
+
+
+
+
 
     // I guess I'll write my own jankety typeahead
     function updateTypeahead () {
@@ -43,53 +59,50 @@
       var target      = $inputSearch.val(),
           listIsEmpty = true;
 
-      // Check all the data to see if they match the search string
-      for (var i = 0, max = icons.length; i < max; i++) {
 
-        // Build a string that matches what appears in the UI
-        // Every row has a name, but not all rows have aliases
-        var iconString = icons[i].iconName;
-        if (icons[i].aliases) {
-          iconString = iconString + ', ' + icons[i].aliases;
-        }
+      // Check rows for matches and show/hide accordingly
+      for (key in nameToElement) {
 
-        // Do the actual check and row show/hides
-        if(iconString.indexOf(target) != -1) {
+        if(key.indexOf(target) !== -1) {
 
-          fadeInIfNecessary($('#' + icons[i].iconName));
+          fadeInIfNecessary(nameToElement[key]);
           listIsEmpty = false;
         }
         else {
-          fadeOutIfNecessary($('#' + icons[i].iconName));
+          fadeOutIfNecessary(nameToElement[key]);
         }
       }
 
-      // If there are no LI's visible, show the blank slate
+      // If there are no rows visible, show the blank slate
       if(listIsEmpty) {
-        fadeInIfNecessary($blankSlate);
+
+        $blankSlate.show();
       }
       else {
-        fadeOutIfNecessary($blankSlate);
+
+        $blankSlate.hide();
       }
     }
+
 
 
     // Velocity animation wrappers
-    function fadeOutIfNecessary($elem) {
+    function fadeOutIfNecessary(elem) {
 
-      if($elem.css('display') != 'none') {
+      if(elem.style.display !== 'none') {
 
-        $elem.velocity('fadeOut', { duration: DURATION });
+        $.Velocity.animate(elem, 'fadeOut', { duration: DURATION });
       }
     }
 
-    function fadeInIfNecessary($elem) {
+    function fadeInIfNecessary(elem) {
 
-      if($elem.css('display') === 'none') {
+      if(elem.style.display === 'none') {
 
-        $elem.velocity('fadeIn', { duration: DURATION });
+        $.Velocity.animate(elem, 'fadeIn', { duration: DURATION });
       }
     }
+
 
 
     // update the typeahead when the user types in the box
