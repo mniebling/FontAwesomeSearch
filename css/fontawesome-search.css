@@ -165,3 +165,18 @@ td.value {
 .about a:hover {
   color: #A1E6BA;
 }
+
+
+
+/* Tips section */
+.suggestions {
+  position: fixed;
+  top: 125px;
+  left: 10px;
+  font-size: 14px;
+  color: #999;
+}
+
+.suggestions ul {
+  margin: 10px 0;
+}
