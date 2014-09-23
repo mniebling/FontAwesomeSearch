@@ -37,7 +37,6 @@ section.search-input {
 
 section.results {
   margin: 130px auto 0 auto;
-  width: 600px;
 }
 
 ul, li {
@@ -179,4 +178,18 @@ td.value {
 
 .suggestions ul {
   margin: 10px 0;
+}
+
+
+/* Get Responsive! */
+@media(max-width: 850px) {
+  .suggestions {
+    display: none;
+  }
+}
+
+@media(max-width: 550px) {
+  .about {
+    display: none;
+  }
 }
