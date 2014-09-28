@@ -32,7 +32,7 @@
 
     // Initialize markup stuff
     $('.results').append(window.Mustache.render(tmpl, iconJSON));
-    $('tr').tooltip({ placement: 'right' });
+    $('tr').tooltip({ placement: 'left' });
 
 
     // dom references
@@ -106,8 +106,6 @@
 
     // show the preview for a row when it is clicked
     $('tr').on('click', function() {
-
-      console.log(this);
 
       var iconUnicodePoint = $(this).data('unicode-point'),
           iconName         = 'fa-' + this.id;

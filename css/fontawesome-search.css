@@ -93,10 +93,6 @@ table.results tr {
   border-top: 1px solid #ccc;
 }
 
-table.results tr td {
-  transition: background-color 0.3s, opacity 0.3s;
-}
-
 /* tr's don't show the hover styling */
 /* but we can trigger off tr:hover and style all the td's */
 table.results tr:hover td {
