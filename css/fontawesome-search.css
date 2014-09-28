@@ -126,7 +126,7 @@ td.name a:hover {
 
 td.hover-hint {
   width: 55px;
-  color: #ccc;
+  color: #aaa;
   font-size: 16px;
   text-align: right;
 
@@ -174,9 +174,36 @@ td.hover-hint {
   position: fixed;
   top: 125px;
   right: 10px;
+  width: 340px;
+  padding: 10px;
 
-  background-color: lightblue;
+  background-color: #eee;
 }
+
+.preview-label {
+  font-size: 14px;
+  color: #777;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.preview-label:not(:first-child) {
+  margin-top: 15px;
+}
+
+.preview-icon-code,
+.preview-icon-unicode-point {
+  font-family: monospace;
+}
+
+.preview-contents {
+  display: none;
+}
+
+.preview-first-run {
+  color: #777;
+}
+
 
 
 /* Tips section */

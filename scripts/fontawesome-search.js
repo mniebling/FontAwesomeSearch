@@ -108,11 +108,21 @@
     $('tr').on('click', function() {
 
       var iconUnicodePoint = $(this).data('unicode-point'),
-          iconName         = 'fa-' + this.id;
+          iconName         = this.id,
+          $firstRun        = $('.preview-first-run');
+
+
+      // hide first-run help if it's the first one
+      console.log($firstRun);
+      // if($firstRun.css('display') === 'none') {
+
+        // replace with Velocity later?
+        $firstRun.hide();
+        $('.preview-contents').show();
+      // }
 
       $('.preview-icon-value').html(iconUnicodePoint);
       $('.preview-icon-name').text(iconName);
-      $('.preview-icon-code').text('html tag ' + iconName + ' close tag');
       $('.preview-icon-unicode-point').text(iconUnicodePoint);
     });
 
