@@ -94,13 +94,18 @@ table.results tr {
 }
 
 table.results tr td {
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, opacity 0.3s;
 }
 
 /* tr's don't show the hover styling */
 /* but we can trigger off tr:hover and style all the td's */
 table.results tr:hover td {
   background-color: #f7f7f7;
+}
+
+/* show the hint when the row is hovered */
+table.results tr:hover td.hover-hint {
+  opacity: 1;
 }
 
 td.icon {
@@ -128,6 +133,8 @@ td.hover-hint {
   color: #ccc;
   font-size: 16px;
   text-align: right;
+
+  opacity: 0;
 }
 
 
