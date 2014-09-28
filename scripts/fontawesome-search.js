@@ -104,6 +104,21 @@
     }
 
 
+    // show the preview for a row when it is clicked
+    $('tr').on('click', function() {
+
+      console.log(this);
+
+      var iconUnicodePoint = $(this).find('td.value').text(),
+          iconName         = 'fa-' + this.id;
+
+      $('.preview-icon-value').html(iconUnicodePoint);
+      $('.preview-icon-name').text(iconName);
+      $('.preview-icon-code').text('html tag ' + iconName + ' close tag');
+      $('.preview-icon-unicode-point').text(iconUnicodePoint);
+    });
+
+
 
     // update the typeahead when the user types in the box
     $('#input-search').on('keyup', updateTypeahead);

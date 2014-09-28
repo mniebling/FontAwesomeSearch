@@ -166,6 +166,15 @@ td.value {
 }
 
 
+/* Preview section */
+.preview {
+  position: fixed;
+  top: 125px;
+  right: 10px;
+
+  background-color: lightblue;
+}
+
 
 /* Tips section */
 .suggestions {
