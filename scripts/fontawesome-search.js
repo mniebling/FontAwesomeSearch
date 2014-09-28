@@ -109,7 +109,7 @@
 
       console.log(this);
 
-      var iconUnicodePoint = $(this).find('td.value').text(),
+      var iconUnicodePoint = $(this).data('unicode-point'),
           iconName         = 'fa-' + this.id;
 
       $('.preview-icon-value').html(iconUnicodePoint);

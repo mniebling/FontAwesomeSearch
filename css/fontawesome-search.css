@@ -123,10 +123,10 @@ td.name a:hover {
   text-decoration: underline;
 }
 
-td.value {
+td.hover-hint {
+  width: 55px;
   color: #ccc;
   font-size: 16px;
-  line-height: 24px;
   text-align: right;
 }
 

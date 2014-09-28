@@ -64,14 +64,14 @@
     <table class="results">
 
       {{#icons}}
-        <tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-title="{{{iconValue}}}">
+        <tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-unicode-point="{{iconValue}}" data-title="{{{iconValue}}}">
           <td class="icon">{{{iconValue}}}</td>
           <td class="name">
             <a href="http://fortawesome.github.io/Font-Awesome/icon/{{iconName}}">
               {{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}
             </a>
           </td>
-          <td class="value">{{iconValue}}</td>
+          <td class="hover-hint">detail &gt;</td>
         </tr>
       {{/icons}}
 
