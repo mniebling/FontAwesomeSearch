@@ -100,11 +100,6 @@ table.results tr:hover td {
   background-color: #f7f7f7;
 }
 
-/* show the hint when the row is hovered */
-table.results tr:hover td.hover-hint {
-  opacity: 1;
-}
-
 td.icon {
   font-size: 14px;
   line-height: 24px;
@@ -116,22 +111,18 @@ td.name {
   line-height: 24px;
 }
 
-td.name a {
-  color: #222;
-  text-decoration: none;
+td.icon-link {
+  display: none;
 }
 
-td.name a:hover {
-  text-decoration: underline;
-}
-
-td.hover-hint {
-  width: 55px;
+td.icon-link a {
   color: #aaa;
-  font-size: 16px;
-  text-align: right;
 
-  opacity: 0;
+  transition: color 0.2s;
+}
+
+td.icon-link a:hover {
+  color: #666;
 }
 
 
@@ -222,6 +213,16 @@ td.hover-hint {
 
 
 /* Get Responsive! */
+@media(max-width: 1100px) {
+  .preview {
+    display: none;
+  }
+
+  tr td.icon-link {
+    display: table-cell;
+  }
+}
+
 @media(max-width: 850px) {
   .suggestions {
     display: none;
