@@ -96,6 +96,7 @@ table.results tr {
 /* tr's don't show the hover styling */
 /* but we can trigger off tr:hover and style all the td's */
 table.results tr:hover td {
+  cursor: pointer;
   background-color: #f7f7f7;
 }
 
@@ -181,8 +182,8 @@ td.hover-hint {
 }
 
 .preview-label {
-  font-size: 14px;
-  color: #777;
+  font-size: 13px;
+  color: #999;
   text-transform: uppercase;
   margin-bottom: 4px;
 }

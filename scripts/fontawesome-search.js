@@ -45,7 +45,7 @@
 
     $('tr.icon-row').each(function(index) {
 
-      var nameAndAliases = $(this).find('a').text().trim();
+      var nameAndAliases = $(this).find('td.name').text().trim();
       nameToElement[nameAndAliases] = this;
     });
 
@@ -107,23 +107,19 @@
     // show the preview for a row when it is clicked
     $('tr').on('click', function() {
 
-      var iconUnicodePoint = $(this).data('unicode-point'),
-          iconName         = this.id,
-          $firstRun        = $('.preview-first-run');
+      var iconUnicode = $(this).data('unicode-point'),
+          iconName    = this.id,
+          iconURL     = 'http://fortawesome.github.io/Font-Awesome/icon/' + iconName,
+          $firstRun   = $('.preview-first-run');
 
+      // replace with Velocity later?
+      $firstRun.hide();
+      $('.preview-contents').show();
 
-      // hide first-run help if it's the first one
-      console.log($firstRun);
-      // if($firstRun.css('display') === 'none') {
-
-        // replace with Velocity later?
-        $firstRun.hide();
-        $('.preview-contents').show();
-      // }
-
-      $('.preview-icon-value').html(iconUnicodePoint);
+      $('.preview-icon-value').html(iconUnicode);
       $('.preview-icon-name').text(iconName);
-      $('.preview-icon-unicode-point').text(iconUnicodePoint);
+      $('.preview-icon-unicode-point').text(iconUnicode);
+      $('.preview-icon-external-link').attr('href', iconURL);
     });
 
 

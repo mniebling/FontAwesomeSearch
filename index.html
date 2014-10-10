@@ -61,6 +61,9 @@
 
       <div class="preview-label">Unicode</div>
       <div class="preview-icon-unicode-point"></div>
+
+      <div class="preview-label">FA Website Link</div>
+      <a class="preview-icon-external-link" href="">Click here</a>
     </div>
   </div>
 
@@ -79,12 +82,7 @@
       {{#icons}}
         <tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-unicode-point="{{iconValue}}" data-title="{{{iconValue}}}">
           <td class="icon">{{{iconValue}}}</td>
-          <td class="name">
-            <a href="http://fortawesome.github.io/Font-Awesome/icon/{{iconName}}">
-              {{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}
-            </a>
-          </td>
-          <td class="hover-hint"><span class="icon">&#xf121;</span> info</td>
+          <td class="name">{{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}</td>
         </tr>
       {{/icons}}
 
