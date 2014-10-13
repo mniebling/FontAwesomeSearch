@@ -240,6 +240,8 @@ td.icon-link a:hover {
 
   tr td.icon-link {
     display: table-cell;
+    text-align: right;
+    padding-right: 5px;
   }
 }
 
