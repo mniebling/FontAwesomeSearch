@@ -55,6 +55,10 @@ ul, li {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-large {
+  font-size: 28px;
+}
+
 #input-search {
   margin: 0 auto;
   padding: 5px;
@@ -179,13 +183,29 @@ td.icon-link a:hover {
   margin-bottom: 4px;
 }
 
+.preview-icon-external-link {
+  color: #1CA86A;
+  transition: color 0.3s;
+}
+
+.preview-icon-external-link:hover {
+  color: #157050;
+}
+
 .preview-label:not(:first-child) {
   margin-top: 15px;
 }
 
 .preview-icon-code,
 .preview-icon-unicode-point {
-  font-family: monospace;
+  font-size: 13px;
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.preview-icon-value {
+  position: absolute;
+  right: 12px;
+  top: 12px;
 }
 
 .preview-contents {
