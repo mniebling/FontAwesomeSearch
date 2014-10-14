@@ -44,6 +44,29 @@
     And remember, search 'times' for <span class="icon">&#xf00d; &#xf057; &#xf05c;</span>
   </div>
 
+  <div class="preview">
+    <div class="preview-first-run">Click a row for details.</div>
+
+    <div class="preview-contents">
+      <div class="preview-label">Icon</div>
+      <div>
+        <span class="preview-icon-name"></span>
+        <span class="preview-icon-value icon icon-large"></span>
+      </div>
+
+      <div class="preview-label">HTML</div>
+      <div class="preview-icon-code">
+        &lt;i class="fa fa-<span class="preview-icon-name"></span>"&gt;&lt;/i&gt;
+      </div>
+
+      <div class="preview-label">Unicode</div>
+      <div class="preview-icon-unicode-point"></div>
+
+      <div class="preview-label">FA Website Link</div>
+      <a class="preview-icon-external-link" href="">Click here</a>
+    </div>
+  </div>
+
   <script src="data/data.js"></script>
   <script src="scripts/jquery-2.1.1.min.js"></script>
   <script src="scripts/mustache.js"></script>
@@ -57,14 +80,12 @@
     <table class="results">
 
       {{#icons}}
-        <tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-title="{{{iconValue}}}">
+        <tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-unicode-point="{{iconValue}}" data-title="{{{iconValue}}}">
           <td class="icon">{{{iconValue}}}</td>
-          <td class="name">
-            <a href="http://fortawesome.github.io/Font-Awesome/icon/{{iconName}}">
-              {{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}
-            </a>
+          <td class="name">{{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}</td>
+          <td class="icon-link">
+            <a href="http://fortawesome.github.io/Font-Awesome/icon/{{iconName}}">link</a>
           </td>
-          <td class="value">{{iconValue}}</td>
         </tr>
       {{/icons}}
 
