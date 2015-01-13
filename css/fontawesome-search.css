@@ -37,7 +37,6 @@ section.search-input {
 
 section.results {
   margin: 130px auto 0 auto;
-  width: 600px;
 }
 
 ul, li {
@@ -54,6 +53,10 @@ ul, li {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-large {
+  font-size: 28px;
 }
 
 #input-search {
@@ -94,13 +97,10 @@ table.results tr {
   border-top: 1px solid #ccc;
 }
 
-table.results tr td {
-  transition: background-color 0.3s;
-}
-
 /* tr's don't show the hover styling */
 /* but we can trigger off tr:hover and style all the td's */
 table.results tr:hover td {
+  cursor: pointer;
   background-color: #f7f7f7;
 }
 
@@ -115,20 +115,18 @@ td.name {
   line-height: 24px;
 }
 
-td.name a {
-  color: #222;
-  text-decoration: none;
+td.icon-link {
+  display: none;
 }
 
-td.name a:hover {
-  text-decoration: underline;
+td.icon-link a {
+  color: #aaa;
+
+  transition: color 0.2s;
 }
 
-td.value {
-  color: #ccc;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: right;
+td.icon-link a:hover {
+  color: #666;
 }
 
 
@@ -164,4 +162,97 @@ td.value {
 
 .about a:hover {
   color: #A1E6BA;
+}
+
+
+/* Preview section */
+.preview {
+  position: fixed;
+  top: 125px;
+  right: 10px;
+  width: 340px;
+  padding: 10px;
+
+  background-color: #eee;
+}
+
+.preview-label {
+  font-size: 13px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.preview-icon-external-link {
+  color: #1CA86A;
+  transition: color 0.3s;
+}
+
+.preview-icon-external-link:hover {
+  color: #157050;
+}
+
+.preview-label:not(:first-child) {
+  margin-top: 15px;
+}
+
+.preview-icon-code,
+.preview-icon-unicode-point {
+  font-size: 13px;
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.preview-icon-value {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.preview-contents {
+  display: none;
+}
+
+.preview-first-run {
+  color: #777;
+}
+
+
+
+/* Tips section */
+.suggestions {
+  position: fixed;
+  top: 125px;
+  left: 10px;
+  font-size: 14px;
+  color: #999;
+}
+
+.suggestions ul {
+  margin: 10px 0;
+}
+
+
+/* Get Responsive! */
+@media(max-width: 1100px) {
+  .preview {
+    display: none;
+  }
+
+  tr td.icon-link {
+    display: table-cell;
+    text-align: right;
+    padding-right: 5px;
+  }
+}
+
+@media(max-width: 850px) {
+  .suggestions {
+    display: none;
+  }
+}
+
+@media(max-width: 550px) {
+  .about {
+    display: none;
+  }
 }

@@ -510,7 +510,7 @@
     },{ 'iconValue': '&#xf1e5;', 'iconName': 'binoculars'
     },{ 'iconValue': '&#xf1fd;', 'iconName': 'birthday-cake'
     },{ 'iconValue': '&#xf207;', 'iconName': 'bus'
-    },{ 'iconValue': '&#xf073;', 'iconName': 'calculator'
+    },{ 'iconValue': '&#xf1ec;', 'iconName': 'calculator'
     },{ 'iconValue': '&#xf20a;', 'iconName': 'cc'
     },{ 'iconValue': '&#xf1f3;', 'iconName': 'cc-amex'
     },{ 'iconValue': '&#xf1f2;', 'iconName': 'cc-discover'
