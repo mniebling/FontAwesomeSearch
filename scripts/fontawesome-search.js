@@ -109,7 +109,7 @@
 
       var iconUnicode = $(this).data('unicode-point'),
           iconName    = this.id,
-          iconURL     = 'http://fortawesome.github.io/Font-Awesome/icon/' + iconName,
+          iconURL     = 'http://fontawesome.io/icon/' + iconName,
           $firstRun   = $('.preview-first-run');
 
       // replace with Velocity later?
