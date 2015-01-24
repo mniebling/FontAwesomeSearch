@@ -193,12 +193,12 @@ td.icon-link a:hover {
 }
 
 .preview-icon-external-link {
-  color: #1CA86A;
+  color: #3365D6;
   transition: color 0.3s;
 }
 
 .preview-icon-external-link:hover {
-  color: #157050;
+  color: #1F3C80;
 }
 
 .preview-label:not(:first-child) {
