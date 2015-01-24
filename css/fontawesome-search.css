@@ -4,11 +4,12 @@
   font-weight: normal;
   font-style: normal;
 
-  src: url('../font/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../font/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
-       url('../font/fontawesome-webfont.woff?v=4.2.0') format('woff'),
-       url('../font/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),
-       url('../font/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../font/fontawesome-webfont.eot?v=4.3.0');
+  src: url('../font/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
+       url('../font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
+       url('../font/fontawesome-webfont.woff?v=4.3.0') format('woff'),
+       url('../font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
+       url('../font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
 }
 
 
@@ -28,11 +29,17 @@ section.search-input {
   padding: 40px 0 15px 0;
   width: 100%;
   text-align: center;
-  color: #10523A;
+  color: #E9ECF5;
 
-  border-bottom: 2px solid #157050;
+  border-bottom: 2px solid #829FE0;
   background-color: #4FCA9F;
-  background-image: linear-gradient(30deg, #1D976C, #93F9B9);
+
+  background: -webkit-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* W3C */
+
 }
 
 section.results {
@@ -65,7 +72,8 @@ ul, li {
   width: 300px;
   font-family: 'Archivo Narrow', Arial, sans-serif;
   font-size: 16px;
-  border: 1px solid #7F9984;
+  border: 1px solid #182542;
+  transition: box-shadow 0.3s;
 
   /* normalize padding */
   -webkit-box-sizing: border-box;
@@ -74,7 +82,8 @@ ul, li {
 }
 
 #input-search:focus {
-  outline-color: #318C53;
+  outline: 0;
+  box-shadow: 0 0 6px 1px #C7D2EB;
 }
 
 label {
@@ -150,18 +159,18 @@ td.icon-link a:hover {
   top: 10px;
   left: 10px;
   font-size: 14px;
-  color: #BBFCD3;
+  color: #C7D2EB;
 }
 
 .about a,
 .about a:visited {
-  color: #BBFCD3;
+  color: #C7D2EB;
 
   transition: color 0.3s;
 }
 
 .about a:hover {
-  color: #A1E6BA;
+  color: #ADBBD9;
 }
 
 
@@ -184,12 +193,12 @@ td.icon-link a:hover {
 }
 
 .preview-icon-external-link {
-  color: #1CA86A;
+  color: #3365D6;
   transition: color 0.3s;
 }
 
 .preview-icon-external-link:hover {
-  color: #157050;
+  color: #1F3C80;
 }
 
 .preview-label:not(:first-child) {

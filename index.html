@@ -27,7 +27,7 @@
   <div class="about">
     <ul>
       <li><a href="https://github.com/mniebling/FontAwesomeSearch">View this project on GitHub</a></li>
-      <li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.2.0.</li>
+      <li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.3.0.</li>
     </ul>
   </div>
 
@@ -67,7 +67,7 @@
     </div>
   </div>
 
-  <script src="data/data.js"></script>
+  <script src="data/data.icons.js"></script>
   <script src="scripts/jquery-2.1.1.min.js"></script>
   <script src="scripts/mustache.js"></script>
   <script src="scripts/fontawesome-search.js"></script>
@@ -75,16 +75,18 @@
   <script src="scripts/velocity.min.js"></script>
 
 
-  <!-- Mustache template -->
-  <script type="text/html" id="tmpl">
+  <!-- Mustache template for list -->
+  <script type="text/html" id="listTemplate">
     <table class="results">
 
       {{#icons}}
-        <tr class="icon-row" id="{{iconName}}" data-toggle="tooltip" data-unicode-point="{{iconValue}}" data-title="{{{iconValue}}}">
-          <td class="icon">{{{iconValue}}}</td>
-          <td class="name">{{iconName}}{{#aliases}}, {{aliases}}{{/aliases}}</td>
+        <tr class="icon-row" id="{{id}}" data-toggle="tooltip" data-unicode-point="{{unicode}}" data-title="{{{unicodeString}}}">
+          <td class="icon">{{{unicodeString}}}</td>
+          <td class="name">
+            {{id}}{{#aliases}}, {{.}}{{/aliases}}
+          </td>
           <td class="icon-link">
-            <a href="http://fontawesome.io/icon/{{iconName}}">link</a>
+            <a href="http://fontawesome.io/icon/{{id}}">link</a>
           </td>
         </tr>
       {{/icons}}
