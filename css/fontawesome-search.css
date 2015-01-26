@@ -192,12 +192,12 @@ td.icon-link a:hover {
   margin-bottom: 4px;
 }
 
-.preview-icon-external-link {
+.preview a {
   color: #3365D6;
   transition: color 0.3s;
 }
 
-.preview-icon-external-link:hover {
+.preview a:hover {
   color: #1F3C80;
 }
 
