@@ -65,6 +65,9 @@
       <div class="preview-label">Created In</div>
       <div class="preview-icon-created-version"></div>
 
+      <div class="preview-label">Categories</div>
+      <div class="preview-icon-categories"></div>
+
       <div class="preview-label">FA Website Link</div>
       <a class="preview-icon-external-link" href="">Click here</a>
     </div>
@@ -83,7 +86,7 @@
     <table class="results">
 
       {{#icons}}
-        <tr class="icon-row" id="{{id}}" data-toggle="tooltip" data-unicode-point="{{unicode}}" data-title="{{{unicodeString}}}" data-version="{{created}}">
+        <tr class="icon-row" id="{{id}}" data-toggle="tooltip" data-unicode-point="{{unicode}}" data-title="{{{unicodeString}}}" data-version="{{created}}" data-categories="{{categories}}">
           <td class="icon">{{{unicodeString}}}</td>
           <td class="name">
             {{id}}{{#aliases}}, {{.}}{{/aliases}}
