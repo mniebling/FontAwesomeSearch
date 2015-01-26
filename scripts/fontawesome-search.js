@@ -107,6 +107,7 @@
 
       var iconName  = this.id;
       var iconURL   = 'http://fontawesome.io/icon/' + iconName;
+      var version   = $(this).data('version');
       var $firstRun = $('.preview-first-run');
 
       // The prefixed string for display in the UI
@@ -122,6 +123,7 @@
       $('.preview-icon-value').html(iconUnicodeString);
       $('.preview-icon-name').text(iconName);
       $('.preview-icon-unicode-point').text(iconUnicodePoint);
+      $('.preview-icon-created-version').text('v' + version);
       $('.preview-icon-external-link').attr('href', iconURL);
     });
 
