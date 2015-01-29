@@ -1226,7 +1226,7 @@
       "categories": [
         "Web Application Icons"
       ],
-      "created": "1.0 - delete - remove - trash - hide - block - stop",
+      "created": 1,
       "filter": [
         "block",
         "abort"
@@ -2720,7 +2720,7 @@
       "categories": [
         "Web Application Icons"
       ],
-      "created": "2.0 - email - e-mail - letter - support - mail - notification",
+      "created": 2,
       "id": "envelope",
       "name": "Envelope",
       "unicode": "f0e0"
@@ -4555,7 +4555,7 @@
       "categories": [
         "Brand Icons"
       ],
-      "created": "3.2 - microsoft",
+      "created": 3.2,
       "id": "windows",
       "name": "Windows",
       "unicode": "f17a"
