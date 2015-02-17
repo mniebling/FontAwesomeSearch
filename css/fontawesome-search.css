@@ -102,6 +102,7 @@ input[type="checkbox"] {
 
 label.checkbox-label {
   font-size: 14px;
+  vertical-align: middle;
   color: #bbb;
 }
 
