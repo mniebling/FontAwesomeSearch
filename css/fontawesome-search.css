@@ -26,9 +26,8 @@ html {
 section.search-input {
   position: fixed;
   top: 0;
-  padding: 40px 0 15px 0;
+  padding: 20px 0 15px 0;
   width: 100%;
-  text-align: center;
   color: #E9ECF5;
 
   border-bottom: 2px solid #829FE0;
@@ -39,11 +38,15 @@ section.search-input {
   background: -webkit-linear-gradient(170deg, #4b6cb7 10%, #182848 90%); /* Chrome 10+, Saf5.1+ */
   background:      -o-linear-gradient(170deg, #4b6cb7 10%, #182848 90%); /* Opera 11.10+ */
   background:         linear-gradient(170deg, #4b6cb7 10%, #182848 90%); /* W3C */
+}
 
+.search-controls {
+  width: 340px;
+  margin: 0 auto;
 }
 
 section.results {
-  margin: 130px auto 0 auto;
+  margin: 140px auto 0 auto;
 }
 
 ul, li {
@@ -67,11 +70,12 @@ ul, li {
 }
 
 #input-search {
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
   padding: 5px;
-  width: 300px;
+  width: 100%;
   font-family: 'Archivo Narrow', Arial, sans-serif;
   font-size: 16px;
+  color: #333;
   border: 1px solid #182542;
   transition: box-shadow 0.3s;
 
@@ -86,10 +90,19 @@ ul, li {
   box-shadow: 0 0 6px 1px #C7D2EB;
 }
 
-label {
+.search-label {
   display: block;
   font-size: 18px;
   margin: 0 0 5px 0;
+}
+
+input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+label.checkbox-label {
+  font-size: 14px;
+  color: #bbb;
 }
 
 table.results {
@@ -177,7 +190,7 @@ td.icon-link a:hover {
 /* Preview section */
 .preview {
   position: fixed;
-  top: 125px;
+  top: 137px;
   right: 10px;
   width: 340px;
   padding: 10px;
@@ -230,7 +243,7 @@ td.icon-link a:hover {
 /* Tips section */
 .suggestions {
   position: fixed;
-  top: 125px;
+  top: 140px;
   left: 10px;
   font-size: 14px;
   color: #999;
@@ -260,7 +273,7 @@ td.icon-link a:hover {
   }
 }
 
-@media(max-width: 550px) {
+@media(max-width: 700px) {
   .about {
     display: none;
   }

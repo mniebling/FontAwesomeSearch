@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Archivo+Narrow" />
 
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="css/fontawesome-search.css" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap-tooltip.css" />
 </head>
@@ -15,8 +16,12 @@
 <body>
 
     <section class="search-input">
-      <label for="input-search">Search FontAwesome:</label>
-      <input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
+      <div class="search-controls">
+        <label for="input-search" class="search-label">Search FontAwesome:</label>
+        <input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
+        <input id="check-include-brands" type="checkbox" />
+        <label for="check-include-brands" class="checkbox-label">Include brand icons</label>
+      </div>
     </section>
 
     <section class="results">
