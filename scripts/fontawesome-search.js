@@ -26,7 +26,6 @@
       return 0;
     });
 
-    console.log(icons);
 
     // Convert unicode to the format we want for display in the UI
     for (var i = 0; i < icons.length; i++) {
@@ -41,6 +40,7 @@
 
     // DOM references
     var $inputSearch = $('#input-search');
+    var $brandCheck  = $('#check-include-brands');
     var $blankSlate  = $('.blank-slate');
 
 
@@ -51,25 +51,39 @@
 
       var nameAndAliases = $(this).find('td.name').text().trim();
       nameToElement[nameAndAliases] = this;
+
+      // We also need to do the first-run hiding of brand icons here
+      // because we know the templated DOM elements are done rendering
+      if (isBrandIcon(this)) {
+        $(this).hide();
+      }
     });
 
 
     // I guess I'll write my own jankety typeahead
     function updateTypeahead () {
 
-      var target      = $inputSearch.val();
-      var listIsEmpty = true;
+      var target         = $inputSearch.val();
+      var listIsEmpty    = true;
+      var showBrandIcons = $brandCheck.is(':checked');
 
       // Check rows for matches and show/hide accordingly
       for (var key in nameToElement) {
 
-        if(key.indexOf(target) !== -1) {
+        // Hide if it doesn't match
+        if (key.indexOf(target) === -1) {
+          fadeOutIfNecessary(nameToElement[key]);
+        }
 
+        // Hide if we are not showing brand icons and it is a brand icon
+        else if (!showBrandIcons && isBrandIcon(nameToElement[key])) {
+          fadeOutIfNecessary(nameToElement[key]);
+        }
+
+        // Otherwise, show
+        else {
           fadeInIfNecessary(nameToElement[key]);
           listIsEmpty = false;
-        }
-        else {
-          fadeOutIfNecessary(nameToElement[key]);
         }
       }
 
@@ -80,6 +94,13 @@
       else {
         $blankSlate.hide();
       }
+    }
+
+
+    // Is this a brand icon? Pass a nameToElement[key] element to find out
+    function isBrandIcon (elem) {
+
+      return ($(elem).data('categories').indexOf('Brand') != -1);
     }
 
 
@@ -153,17 +174,22 @@
     });
 
 
-    // Update the typeahead when the user types in the box
-    $('#input-search').on('keyup', updateTypeahead);
+    // Update the typeahead...
 
-    // Update the typeahead when the user changes the hash
-    $(window).on('hashchange', function () {
+    // ...when the user types in the box
+    $inputSearch.on('keyup', updateTypeahead);
+
+    // ...when the user toggles the brand filter
+    $brandCheck.on('change', updateTypeahead);
+
+    // ...when the user changes the hash
+    $(window).on('hashchange', function () {3
 
       $('#input-search').val((window.location.hash).slice(1));
       updateTypeahead();
     });
 
-    // Update the typeahead when the user arrives at the page with a hash
+    // ...when the user arrives at the page with a hash
     if(window.location.hash !== "") {
 
       $('#input-search').val((window.location.hash).slice(1));
