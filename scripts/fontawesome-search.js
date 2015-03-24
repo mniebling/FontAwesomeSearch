@@ -8,7 +8,7 @@
     var icons    = iconJSON.icons;
 
     // Mustache template
-    var listTemplate  = $('#listTemplate').html();
+    var listTemplate = $('#listTemplate').html();
 
     // Duration in milliseconds for Velocity animations
     var DURATION = 75;
