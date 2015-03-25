@@ -23,4 +23,4 @@ Kakow!
 
 Just paste this into the "Search URL" field of an Alfred custom search entry:
 
-`http://mniebling.github.io/FontAwesomeSearch/#{query}`
+`http://www.mikeniebling.com/FontAwesomeSearch/#{query}`

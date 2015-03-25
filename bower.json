@@ -1,0 +1,22 @@
+{
+  "name": "FontAwesomeSearch",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mniebling/FontAwesomeSearch",
+  "authors": [
+    "Mike Niebling <michael.niebling@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "mustache": "~1.1.0",
+    "velocity": "~1.2.2"
+  }
+}

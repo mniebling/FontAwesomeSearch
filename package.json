@@ -1,0 +1,30 @@
+{
+  "name": "FontAwesomeSearch",
+  "version": "1.0.0",
+  "description": "FontAwesomeSearch\r =================\r FontAwesomeSearch is a simple [website](http://mniebling.github.io/FontAwesomeSearch/) that allows you to perform text searches on the descriptions of FontAwesome icons.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mniebling/FontAwesomeSearch.git"
+  },
+  "author": "Mike Niebling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mniebling/FontAwesomeSearch/issues"
+  },
+  "homepage": "https://github.com/mniebling/FontAwesomeSearch",
+  "devDependencies": {
+    "bower": "1.3.12",
+    "bower-files": "3.4.4",
+    "gulp": "3.8.11",
+    "gulp-concat": "2.5.0",
+    "gulp-less": "3.0.0",
+    "gulp-plumber": "0.6.6",
+    "gulp-print": "1.1.0",
+    "gulp-watch": "4.1.1",
+    "run-sequence": "1.0.2"
+  }
+}
