@@ -23,16 +23,11 @@ section.search-input {
   color: #E9ECF5;
   border-bottom: 2px solid #829FE0;
   background-color: #4FCA9F;
-  background: -moz-linear-gradient(170deg, #4b6cb7 10%, #182848 90%);
-  /* FF3.6+ */
-  background: -ms-linear-gradient(170deg, #4b6cb7 10%, #182848 90%);
-  /* IE10 */
-  background: -webkit-linear-gradient(170deg, #4b6cb7 10%, #182848 90%);
-  /* Chrome 10+, Saf5.1+ */
-  background: -o-linear-gradient(170deg, #4b6cb7 10%, #182848 90%);
-  /* Opera 11.10+ */
-  background: linear-gradient(170deg, #4b6cb7 10%, #182848 90%);
-  /* W3C */
+  background: -webkit-linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
+  background: -moz-linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
+  background: -ms-linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
+  background: -o-linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
+  background: linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
 }
 .search-controls {
   width: 340px;
