@@ -1,26 +1,46 @@
-/* FontAwesome include */
+// Branding colors
+@color-header-text-main:     #E9ECF5;
+@color-header-text-subtle:   #BBBBBB;
+@color-header-border-bottom: #829FE0;
+@color-header-bg-fallback:   #4FCA9F;
+@color-header-bg-stop-from:  #4B6CB7;
+@color-header-bg-stop-to:    #182848;
+@color-header-input-border:  #182542;
+@color-header-input-outline: #C7D2EB;
+
+@color-about-text:  #C7D2EB;
+@color-about-hover: #ADBBD9;
+
+@color-preview-link:  #3365D6;
+@color-preview-hover: #1F3C80;
+
+@color-black: #333333;
+
+
+// FontAwesome include
 @font-face {
   font-family: 'FontAwesome';
   font-weight: normal;
   font-style: normal;
 
-  src: url('../font/fontawesome-webfont.eot?v=4.3.0');
-  src: url('../font/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
-       url('../font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
-       url('../font/fontawesome-webfont.woff?v=4.3.0') format('woff'),
-       url('../font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
-       url('../font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  src: url('font/fontawesome-webfont.eot?v=4.3.0');
+  src: url('font/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
+       url('font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
+       url('font/fontawesome-webfont.woff?v=4.3.0') format('woff'),
+       url('font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
+       url('font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
 }
 
 
-/* Structural & resets */
+// Structural & resets
 body {
   margin: 0;
   font-family: 'Archivo Narrow', Arial, sans-serif;
 }
 
 html {
-  overflow-y: scroll; /* fix jumping layout when scrollbar appears/disappears */
+  // fix jumping layout when scrollbar appears/disappears
+  overflow-y: scroll;
 }
 
 section.search-input {
@@ -28,10 +48,10 @@ section.search-input {
   top: 0;
   padding: 20px 0 15px 0;
   width: 100%;
-  color: #E9ECF5;
-  border-bottom: 2px solid #829FE0;
-  background-color: #4FCA9F;
-  .linear-gradient(@direction: 170deg; @stops: #4b6cb7 10%, #182848 90%;)
+  color: @color-header-text-main;
+  border-bottom: 2px solid @color-header-border-bottom;
+  background-color: @color-header-bg-fallback;
+  .linear-gradient(@direction: 170deg; @stops: @color-header-bg-stop-from 10%, @color-header-bg-stop-to 90%;)
 }
 
 .search-controls {
@@ -50,7 +70,7 @@ ul, li {
 }
 
 
-/* Search results */
+// Search results
 .icon {
   font-family: 'FontAwesome';
   font-size: 14px;
@@ -69,11 +89,11 @@ ul, li {
   width: 100%;
   font-family: 'Archivo Narrow', Arial, sans-serif;
   font-size: 16px;
-  color: #333;
-  border: 1px solid #182542;
+  color: @color-black;
+  border: 1px solid @color-header-input-border;
   transition: box-shadow 0.3s;
 
-  /* normalize padding */
+  // normalize padding
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -81,7 +101,7 @@ ul, li {
 
 #input-search:focus {
   outline: 0;
-  box-shadow: 0 0 6px 1px #C7D2EB;
+  box-shadow: 0 0 6px 1px @color-header-input-outline;
 }
 
 .search-label {
@@ -97,7 +117,7 @@ input[type="checkbox"] {
 label.checkbox-label {
   font-size: 14px;
   vertical-align: middle;
-  color: #bbb;
+  color: @color-header-text-subtle;
 }
 
 table.results {
@@ -111,14 +131,14 @@ table.results {
 table.results tr {
   margin-top: 4px;
   padding-bottom: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #CCC;
 }
 
-/* tr's don't show the hover styling */
-/* but we can trigger off tr:hover and style all the td's */
+// tr's don't show the hover styling
+// but we can trigger off tr:hover and style all the td's
 table.results tr:hover td {
   cursor: pointer;
-  background-color: #f7f7f7;
+  background-color: #F7F7F7;
 }
 
 td.icon {
@@ -147,7 +167,7 @@ td.icon-link a:hover {
 }
 
 
-/* Blank slate */
+// Blank slate
 .blank-slate {
   display: none;
 
@@ -161,28 +181,27 @@ td.icon-link a:hover {
 
 
 
-/* About section */
+// About section
 .about {
   position: fixed;
   top: 10px;
   left: 10px;
   font-size: 14px;
-  color: #C7D2EB;
+  color: @color-about-text;
 }
 
 .about a,
 .about a:visited {
-  color: #C7D2EB;
-
+  color: @color-about-text;
   transition: color 0.3s;
 }
 
 .about a:hover {
-  color: #ADBBD9;
+  color: @color-about-hover;
 }
 
 
-/* Preview section */
+// Preview section
 .preview {
   position: fixed;
   top: 137px;
@@ -201,12 +220,12 @@ td.icon-link a:hover {
 }
 
 .preview a {
-  color: #3365D6;
+  color: @color-preview-link;
   transition: color 0.3s;
 }
 
 .preview a:hover {
-  color: #1F3C80;
+  color: @color-preview-hover;
 }
 
 .preview-label:not(:first-child) {
@@ -235,7 +254,7 @@ td.icon-link a:hover {
 
 
 
-/* Tips section */
+// Tips section
 .suggestions {
   position: fixed;
   top: 140px;
@@ -249,7 +268,7 @@ td.icon-link a:hover {
 }
 
 
-/* Get Responsive! */
+// Get Responsive!
 @media(max-width: 1100px) {
   .preview {
     display: none;

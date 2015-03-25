@@ -1,28 +1,25 @@
-/* FontAwesome include */
 @font-face {
   font-family: 'FontAwesome';
   font-weight: normal;
   font-style: normal;
-  src: url('../font/fontawesome-webfont.eot?v=4.3.0');
-  src: url('../font/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../font/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  src: url('font/fontawesome-webfont.eot?v=4.3.0');
+  src: url('font/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('font/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
 }
-/* Structural & resets */
 body {
   margin: 0;
   font-family: 'Archivo Narrow', Arial, sans-serif;
 }
 html {
   overflow-y: scroll;
-  /* fix jumping layout when scrollbar appears/disappears */
 }
 section.search-input {
   position: fixed;
   top: 0;
   padding: 20px 0 15px 0;
   width: 100%;
-  color: #E9ECF5;
-  border-bottom: 2px solid #829FE0;
-  background-color: #4FCA9F;
+  color: #e9ecf5;
+  border-bottom: 2px solid #829fe0;
+  background-color: #4fca9f;
   background: -webkit-linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
   background: -moz-linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
   background: -ms-linear-gradient(170deg, #4b6cb7 10%, #182848 90%) no-repeat;
@@ -42,7 +39,6 @@ li {
   margin: 0;
   padding: 0;
 }
-/* Search results */
 .icon {
   font-family: 'FontAwesome';
   font-size: 14px;
@@ -59,17 +55,16 @@ li {
   width: 100%;
   font-family: 'Archivo Narrow', Arial, sans-serif;
   font-size: 16px;
-  color: #333;
+  color: #333333;
   border: 1px solid #182542;
   transition: box-shadow 0.3s;
-  /* normalize padding */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 #input-search:focus {
   outline: 0;
-  box-shadow: 0 0 6px 1px #C7D2EB;
+  box-shadow: 0 0 6px 1px #c7d2eb;
 }
 .search-label {
   display: block;
@@ -82,7 +77,7 @@ input[type="checkbox"] {
 label.checkbox-label {
   font-size: 14px;
   vertical-align: middle;
-  color: #bbb;
+  color: #bbbbbb;
 }
 table.results {
   text-align: left;
@@ -94,13 +89,11 @@ table.results {
 table.results tr {
   margin-top: 4px;
   padding-bottom: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #CCC;
 }
-/* tr's don't show the hover styling */
-/* but we can trigger off tr:hover and style all the td's */
 table.results tr:hover td {
   cursor: pointer;
-  background-color: #f7f7f7;
+  background-color: #F7F7F7;
 }
 td.icon {
   font-size: 14px;
@@ -121,7 +114,6 @@ td.icon-link a {
 td.icon-link a:hover {
   color: #666;
 }
-/* Blank slate */
 .blank-slate {
   display: none;
   width: 300px;
@@ -131,23 +123,21 @@ td.icon-link a:hover {
   border: 1px dotted #999;
   background-color: #efefef;
 }
-/* About section */
 .about {
   position: fixed;
   top: 10px;
   left: 10px;
   font-size: 14px;
-  color: #C7D2EB;
+  color: #c7d2eb;
 }
 .about a,
 .about a:visited {
-  color: #C7D2EB;
+  color: #c7d2eb;
   transition: color 0.3s;
 }
 .about a:hover {
-  color: #ADBBD9;
+  color: #adbbd9;
 }
-/* Preview section */
 .preview {
   position: fixed;
   top: 137px;
@@ -163,11 +153,11 @@ td.icon-link a:hover {
   margin-bottom: 4px;
 }
 .preview a {
-  color: #3365D6;
+  color: #3365d6;
   transition: color 0.3s;
 }
 .preview a:hover {
-  color: #1F3C80;
+  color: #1f3c80;
 }
 .preview-label:not(:first-child) {
   margin-top: 15px;
@@ -188,7 +178,6 @@ td.icon-link a:hover {
 .preview-first-run {
   color: #777;
 }
-/* Tips section */
 .suggestions {
   position: fixed;
   top: 140px;
@@ -199,7 +188,6 @@ td.icon-link a:hover {
 .suggestions ul {
   margin: 10px 0;
 }
-/* Get Responsive! */
 @media (max-width: 1100px) {
   .preview {
     display: none;
