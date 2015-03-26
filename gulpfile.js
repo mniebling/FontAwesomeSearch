@@ -5,6 +5,7 @@ var watch       = require('gulp-watch');
 var less        = require('gulp-less');
 var print       = require('gulp-print');
 var plumber     = require('gulp-plumber');
+var uglify      = require('gulp-uglify');
 var bowerFiles  = require('bower-files');
 var runSequence = require('run-sequence');
 
@@ -30,18 +31,21 @@ var bowerJSFiles = bowerFiles().ext('js').files;
 console.log('');
 
 
-// Concatenate all application script files
-gulp.task('concat-js', function () {
+// Concatenate & minify all application script files
+gulp.task('app-js', function () {
 
   return gulp.src(scriptFiles)
 
     // Output the files to the console
     .pipe(print(function (path) {
-      return 'concat-js: ' + path;
+      return 'app-js: ' + path;
     }))
 
     // Concatenate the scripts into a single file
     .pipe(concat('compiled.app.js'))
+
+    // Minify it
+    .pipe(uglify())
 
     // Write that file to the destination
     .pipe(gulp.dest(outputPath));
@@ -77,7 +81,7 @@ gulp.task('compile-css', function () {
 });
 
 
-// Compile all the main script files from Bower packages
+// Concatenate & minify all the main script files from Bower packages
 gulp.task('bower-js', function () {
 
   return gulp.src(bowerJSFiles)
@@ -90,6 +94,9 @@ gulp.task('bower-js', function () {
   // Concatenate the scripts into a single file
   .pipe(concat('compiled.bower.js'))
 
+  // Minify it
+  .pipe(uglify())
+
   // Write that file to the destination
   .pipe(gulp.dest(outputPath));
 });
@@ -100,7 +107,7 @@ gulp.task('watch', function () {
 
   gulp.watch(lessFiles,    ['compile-css']);
   gulp.watch(bowerJSFiles, ['bower-js']);
-  gulp.watch(scriptFiles,  ['concat-js']);
+  gulp.watch(scriptFiles,  ['app-js']);
 
   return true;
 });
@@ -112,7 +119,7 @@ gulp.task('default', function (callback) {
   runSequence(
     'compile-css',
     'bower-js',
-    'concat-js',
+    'app-js',
     'watch',
     callback);
 });
