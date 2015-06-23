@@ -46,7 +46,14 @@ $(function () {
 
   $('tr.icon-row').each(function (index) {
 
+    // Grab the actual name and aliases
     var nameAndAliases = $(this).find('td.name').text().trim();
+
+    // Append the folded versions if needed
+    if (nameAndAliases.indexOf('-') !== -1) {
+      nameAndAliases += ' ' + nameAndAliases.replace(/-/g, '%20');
+    }
+
     nameToElement[nameAndAliases] = this;
 
     // We also need to do the first-run hiding of brand icons here
@@ -180,7 +187,7 @@ $(function () {
   $brandCheck.on('change', updateTypeahead);
 
   // ...when the user changes the hash
-  $(window).on('hashchange', function () {3
+  $(window).on('hashchange', function () {
 
     $('#input-search').val((window.location.hash).slice(1));
     updateTypeahead();
