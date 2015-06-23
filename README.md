@@ -1,6 +1,6 @@
 FontAwesomeSearch
 =================
-FontAwesomeSearch is a simple [website](http://mniebling.github.io/FontAwesomeSearch/) that allows you to perform text searches on the descriptions of FontAwesome icons.
+FontAwesomeSearch is a simple [website](http://mniebling.github.io/FontAwesomeSearch/) that allows you to perform text searches on the descriptions of [FontAwesome](http://fontawesome.io) icons.
 
 
 
