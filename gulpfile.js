@@ -1,125 +1,47 @@
-// Require modules:
-var gulp        = require('gulp');
-var concat      = require('gulp-concat');
-var watch       = require('gulp-watch');
-var less        = require('gulp-less');
-var print       = require('gulp-print');
-var plumber     = require('gulp-plumber');
-var uglify      = require('gulp-uglify');
-var bowerFiles  = require('bower-files');
+// Modules for base gulpfile
+var requireDir  = require('require-dir');
 var runSequence = require('run-sequence');
 
 
-// Options
-var outputPath = '';
+// Require all the subtasks.
+// Pass them this instance of gulp as well as our config file:
+var config    = require('./gulp/config.js');
+var gulp      = require('gulp');
+var gulpTasks = requireDir('./gulp');
 
 
-// Files
-var lessFiles = [
-  'css/*.less',
-  'css/*.css',
-  '!compiled.*.css'
-];
+// Command line flags
+// (first two items in argv are `node` and gulp path)
+//
+// Ones we care about are enumerated below, attached to the
+// gulp object so they're freely available inside tasks
+var flags = require('minimist')(process.argv.slice(2));
 
-var scriptFiles = [
-  'js/*.js',
-  'data/data.icons.js',
-  '!compiled.*.js'
-];
+gulp.flags = {
+	IS_VERBOSE:    flags.verbose,
+	IS_PRODUCTION: flags.prod || flags.production
+}
 
-var bowerJSFiles = bowerFiles().ext('js').files;
+
+// Kick it off with a blank line for readability
 console.log('');
 
 
-// Concatenate & minify all application script files
-gulp.task('app-js', function () {
-
-  return gulp.src(scriptFiles)
-
-    // Output the files to the console
-    .pipe(print(function (path) {
-      return 'app-js: ' + path;
-    }))
-
-    // Concatenate the scripts into a single file
-    .pipe(concat('compiled.app.js'))
-
-    // Minify it
-    .pipe(uglify())
-
-    // Write that file to the destination
-    .pipe(gulp.dest(outputPath));
-});
-
-
-// Compile all LESS and CSS files into one
-gulp.task('compile-css', function () {
-
-  return gulp.src(lessFiles)
-
-    // Output the files to the console
-    .pipe(print(function (path) {
-      return 'compile-css: ' + path;
-    }))
-
-    // Concatenate the styles into a single file
-    .pipe(concat('compiled.styles.css'))
-
-    // Don't break the pipe if the LESS compilation errors
-    .pipe(plumber({
-      handleError: function (error) {
-        console.log(error);
-        this.emit('end');
-      }
-    }))
-
-    // Compile the LESS
-    .pipe(less())
-
-    // Write that file to the destination
-    .pipe(gulp.dest(outputPath));
-});
-
-
-// Concatenate & minify all the main script files from Bower packages
-gulp.task('bower-js', function () {
-
-  return gulp.src(bowerJSFiles)
-
-  // Output the files to the console
-  .pipe(print(function (path) {
-    return 'bower-js: ' + path;
-  }))
-
-  // Concatenate the scripts into a single file
-  .pipe(concat('compiled.bower.js'))
-
-  // Minify it
-  .pipe(uglify())
-
-  // Write that file to the destination
-  .pipe(gulp.dest(outputPath));
-});
-
-
-// Watch the project files for changes and run subtasks as needed
-gulp.task('watch', function () {
-
-  gulp.watch(lessFiles,    ['compile-css']);
-  gulp.watch(bowerJSFiles, ['bower-js']);
-  gulp.watch(scriptFiles,  ['app-js']);
-
-  return true;
-});
-
-
-// By default: run everything once, then watch
+// Default task: run everything once, then watch
 gulp.task('default', function (callback) {
 
-  runSequence(
-    'compile-css',
-    'bower-js',
-    'app-js',
-    'watch',
-    callback);
+	// Debugging output
+	if (gulp.flags.IS_VERBOSE) {
+
+		console.log('\n Command line flags:');
+		console.log(gulp.flags);
+		console.log('');
+	}
+
+	runSequence(
+		'compile-css',
+		'bower-js',
+		'app-js',
+		'watch',
+		callback);
 });
