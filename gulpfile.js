@@ -1,4 +1,5 @@
 // Modules for base gulpfile
+var chalk       = require('chalk');
 var requireDir  = require('require-dir');
 var runSequence = require('run-sequence');
 
@@ -27,13 +28,16 @@ gulp.flags = {
 console.log('');
 
 
-// Default task: run everything once, then watch
+// DEFAULT
+//
+// Run everything once, then watch
+// ----------------------------------------------------------------------------
 gulp.task('default', function (callback) {
 
 	// Debugging output
 	if (gulp.flags.IS_VERBOSE) {
 
-		console.log('\n Command line flags:');
+		console.log(chalk.yellow('\n Command line flags:'));
 		console.log(gulp.flags);
 		console.log('');
 	}
@@ -43,5 +47,7 @@ gulp.task('default', function (callback) {
 		'bower-js',
 		'app-js',
 		'watch',
-		callback);
+		callback
+	);
+
 });

@@ -11,7 +11,7 @@ var uglify = require('gulp-uglify');
 
 // BOWER-JS
 //
-// Compile and concat all bower js files
+// Minify and concat all js files exposed by bower packages
 // ----------------------------------------------------------------------------
 gulp.task('bower-js', function () {
 
