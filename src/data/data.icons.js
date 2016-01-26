@@ -1,5 +1,5 @@
-(function (window) {
-  'use strict';
+// TO DO: Export this as a module via browserify
+// or even better is there a FAS npm module with this file in there?
 
   // 4.4.0
   window.icondata = {
@@ -7147,4 +7147,3 @@
 }
 
 // INSERT YAML-TO-JSON ABOVE
-}(this));

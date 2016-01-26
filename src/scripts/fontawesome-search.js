@@ -1,3 +1,9 @@
+// Velocity needs global jQuery right now
+window.jQuery = window.$ = require('jquery')
+mustache = require('mustache')
+Velocity = require('velocity-animate')
+
+
 $(function () {
 
   // Grab the icons
@@ -31,8 +37,8 @@ $(function () {
 
 
   // Initialize markup stuff
-  $('.results').append(window.Mustache.render(listTemplate, iconJSON));
-  $('tr').tooltip({ placement: 'left' });
+  $('.results').append(window.mustache.render(listTemplate, iconJSON));
+  // $('tr').tooltip({ placement: 'left' });
 
 
   // DOM references

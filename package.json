@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "FontAwesomeSearch\r =================\r FontAwesomeSearch is a simple [website](http://mniebling.github.io/FontAwesomeSearch/) that allows you to perform text searches on the descriptions of FontAwesome icons.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mniebling/FontAwesomeSearch.git"
@@ -16,20 +13,41 @@
     "url": "https://github.com/mniebling/FontAwesomeSearch/issues"
   },
   "homepage": "https://github.com/mniebling/FontAwesomeSearch",
+  "dependencies": {
+    "jquery": "2.2.0",
+    "mustache": "2.2.1",
+    "velocity-animate": "1.2.3"
+  },
   "devDependencies": {
-    "bower": "^1.4.1",
-    "bower-files": "^3.7.2",
-    "chalk": "^1.1.0",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-if": "^1.2.5",
-    "gulp-less": "^3.0.3",
-    "gulp-plumber": "^1.0.1",
-    "gulp-print": "^1.1.0",
-    "gulp-uglify": "^1.2.0",
-    "gulp-watch": "^4.3.4",
-    "minimist": "^1.1.2",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.2"
+    "browser-sync": "2.11.1",
+    "browserify": "13.0.0",
+    "concat": "1.0.0",
+    "copyfiles": "0.2.1",
+    "glob-concat": "1.0.1",
+    "jshint": "2.9.1",
+    "less": "2.5.3",
+    "lodash": "4.0.1",
+    "rimraf": "2.5.1",
+    "uglify-js": "2.6.1"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*",
+
+    "prebuild": "npm run clean -s",
+    "build": "npm run build:static && npm run build:scripts && npm run build:styles",
+
+    "prebuild:scripts": "uglifyjs src/**/*.js --beautify > dist/scripts.js",
+    "build:scripts": "browserify dist/scripts.js > dist/bundled.js",
+
+    "prebuild:styles": "node tasks/prepare-styles.js",
+    "build:styles": "lessc dist/styles.less > dist/compiled.css",
+
+    "build:static": "copyup --flatten src/font/* dist",
+
+    "serve": "browser-sync start --server",
+
+    "dev": "npm run build && npm run serve",
+
+    "lint": "jshint src/*.js"
   }
 }
