@@ -83,7 +83,7 @@
   <script type="text/html" id="listTemplate">
     <table class="results">
 
-      {{#icons}}
+      {{#.}}
         <tr class="icon-row" id="{{id}}" data-toggle="tooltip" data-unicode-point="{{unicode}}" data-title="{{{unicodeString}}}" data-version="{{created}}" data-categories="{{categories}}">
           <td class="icon">{{{unicodeString}}}</td>
           <td class="name">
@@ -93,7 +93,7 @@
             <a href="http://fontawesome.io/icon/{{id}}">link</a>
           </td>
         </tr>
-      {{/icons}}
+      {{/.}}
 
     </table>
   </script>

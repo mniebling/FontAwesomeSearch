@@ -1,14 +1,23 @@
 // Velocity needs global jQuery right now
 window.jQuery = window.$ = require('jquery')
+var _        = require('lodash')
 var mustache = require('mustache')
 var Velocity = require('velocity-animate')
 
+// Fetch the JSON object with all the icon metadata
+var icons = require('./data.icons.js')
+
+// We want to display the icon list alphabetically
+icons = _.sortBy(icons, 'id')
+
+// Add a property to each icon containing its full unicode string, because the
+// data only has the unicode suffix and we want to render the whole thing
+_.each(icons, function (icon) {
+  icon.unicodeString = '&#x' + icon.unicode
+})
+
 
 $(function () {
-
-  // Grab the icons
-  var iconJSON = require('./data.icons.js')
-  var icons = iconJSON.icons
 
   // Mustache template
   var listTemplate = $('#listTemplate').html();
@@ -16,30 +25,9 @@ $(function () {
   // Duration in milliseconds for Velocity animations
   var DURATION = 75;
 
-
-  // Sort the icons by name, A-to-Z
-  icons.sort(function(a, b) {
-
-    if (a.id < b.id) {
-      return -1;
-    }
-    if (a.id > b.id) {
-      return 1;
-    }
-    return 0;
-  });
-
-
-  // Convert unicode to the format we want for display in the UI
-  for (var i = 0; i < icons.length; i++) {
-    icons[i].unicodeString = '&#x' + icons[i].unicode;
-  }
-
-
   // Initialize markup stuff
-  $('.results').append(mustache.render(listTemplate, iconJSON));
+  $('.results').append(mustache.render(listTemplate, icons));
   // $('tr').tooltip({ placement: 'left' });
-
 
   // DOM references
   var $inputSearch = $('#input-search');
