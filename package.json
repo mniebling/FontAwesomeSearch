@@ -15,6 +15,7 @@
   "homepage": "https://github.com/mniebling/FontAwesomeSearch",
   "dependencies": {
     "jquery": "2.2.0",
+    "lodash": "4.0.1",
     "mustache": "2.2.1",
     "velocity-animate": "1.2.3"
   },
@@ -27,8 +28,7 @@
     "jshint": "2.9.1",
     "less": "2.5.3",
     "lodash": "4.0.1",
-    "rimraf": "2.5.1",
-    "uglify-js": "2.6.1"
+    "rimraf": "2.5.1"
   },
   "scripts": {
     "clean": "rimraf dist/*",
@@ -36,13 +36,12 @@
     "prebuild": "npm run clean -s",
     "build": "npm run build:static && npm run build:scripts && npm run build:styles",
 
-    "prebuild:scripts": "uglifyjs src/**/*.js --beautify > dist/scripts.js",
-    "build:scripts": "browserify dist/scripts.js > dist/bundled.js",
+    "build:static": "copyup --flatten src/font/* dist",
+
+    "build:scripts": "browserify src/scripts/main.js > dist/bundled.js",
 
     "prebuild:styles": "node tasks/prepare-styles.js",
     "build:styles": "lessc dist/styles.less > dist/compiled.css",
-
-    "build:static": "copyup --flatten src/font/* dist",
 
     "serve": "browser-sync start --server",
 

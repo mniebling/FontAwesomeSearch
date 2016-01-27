@@ -1,14 +1,14 @@
 // Velocity needs global jQuery right now
 window.jQuery = window.$ = require('jquery')
-mustache = require('mustache')
-Velocity = require('velocity-animate')
+var mustache = require('mustache')
+var Velocity = require('velocity-animate')
 
 
 $(function () {
 
   // Grab the icons
-  var iconJSON = window.icondata || {};
-  var icons    = iconJSON.icons;
+  var iconJSON = require('./data.icons.js')
+  var icons = iconJSON.icons
 
   // Mustache template
   var listTemplate = $('#listTemplate').html();
@@ -37,7 +37,7 @@ $(function () {
 
 
   // Initialize markup stuff
-  $('.results').append(window.mustache.render(listTemplate, iconJSON));
+  $('.results').append(mustache.render(listTemplate, iconJSON));
   // $('tr').tooltip({ placement: 'left' });
 
 
