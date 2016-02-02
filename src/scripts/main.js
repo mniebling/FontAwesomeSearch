@@ -10,8 +10,9 @@ var icons = require('./data.icons.js')
 // We want to display the icon list alphabetically
 icons = _.sortBy(icons, 'id')
 
-// Add a property to each icon containing its full unicode string, because the
-// data only has the unicode suffix and we want to render the whole thing
+// Add a property to each icon containing its full unicode string,
+// because the data only has the unicode suffix and we need the whole thing
+// in order to render manually inside the tooltips.
 _.each(icons, function (icon) {
   icon.unicodeString = '&#x' + icon.unicode
 })
@@ -20,13 +21,13 @@ _.each(icons, function (icon) {
 $(function () {
 
   // Mustache template
-  var listTemplate = $('#listTemplate').html();
+  var listTemplate = $('#listTemplate').html()
 
   // Duration in milliseconds for Velocity animations
-  var DURATION = 75;
+  var DURATION = 75
 
   // Initialize markup stuff
-  $('.results').append(mustache.render(listTemplate, icons));
+  $('.results').append(mustache.render(listTemplate, icons))
   // $('tr').tooltip({ placement: 'left' });
 
   // DOM references
