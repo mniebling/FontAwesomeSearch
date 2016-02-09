@@ -20,16 +20,22 @@ var createHoverTooltip = function (event) {
     .append(template)
     .find('.js-active-hover-tooltip')
 
-  // Dimensions of the parent element (that gets hovered)
-  var parent = event.target.getBoundingClientRect()
+  // We want to position the tooltip relative to the row, regardless of whether
+  // an element inside the row gets hovered. We can't ignore pointer events on
+  // the children, though, because one of them is a link.
+  var row;
+
+  if (event.target.classList.contains('c-results__row')) {
+    row = event.target
+  }
+  else row = event.target.parentNode
 
   // Calculate position
+  var parent    = row.getBoundingClientRect()
   var target    = {}
   var tipWidth  = $tipElement.outerWidth()
   var tipHeight = $tipElement.outerHeight()
   var tipMargin = 8 // px
-
-	console.log(parent)
 
   // Vertical position...
   target.top = parent.top + (parent.height / 2) - (tipHeight / 2)
