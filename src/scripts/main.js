@@ -16,14 +16,15 @@ _.each(icons, function (icon) {
   icon.unicodeString = '&#x' + icon.unicode
 })
 
+// Duration in milliseconds for velocity animations
+var DURATION = 75
 
+
+// Now that the DOM is ready...
 $(function () {
 
   // Mustache template
   var listTemplate = $('#listTemplate').html()
-
-  // Duration in milliseconds for velocity animations
-  var DURATION = 75
 
   // Initialize markup stuff
   $('.results').append(mustache.render(listTemplate, icons))
@@ -69,7 +70,7 @@ $(function () {
     for (var key in nameToElement) {
 
       // Hide if it doesn't match
-      if (key.indexOf(target) === -1) {
+      if (_(key).includes(target) === false) {
         fadeOutIfNecessary(nameToElement[key])
       }
 
@@ -86,7 +87,7 @@ $(function () {
     }
 
     // If there are no rows visible, show the blank slate
-    if(listIsEmpty) {
+    if (listIsEmpty) {
       $blankSlate.show()
     }
     else {
@@ -97,22 +98,21 @@ $(function () {
 
   // Is this a brand icon? Pass a nameToElement[key] element to find out
   function isBrandIcon (elem) {
-
     return ($(elem).data('categories').indexOf('Brand') != -1)
   }
 
 
-  // velocity animation wrappers
+  // Velocity animation wrappers
   function fadeOutIfNecessary (elem) {
 
-    if(elem.style.display !== 'none') {
+    if (elem.style.display !== 'none') {
       velocity(elem, 'fadeOut', { duration: DURATION })
     }
   }
 
   function fadeInIfNecessary (elem) {
 
-    if(elem.style.display === 'none') {
+    if (elem.style.display === 'none') {
       velocity(elem, 'fadeIn', { duration: DURATION })
     }
   }
@@ -149,7 +149,7 @@ $(function () {
     // Populate the categories list
     $('.preview-icon-categories').empty()
 
-    $.each(categories, function (index, value) {
+    _.each(categories, function (value, key, index) {
 
       // A category string comes from the data like 'Web Application Icons'.
       // For the link text, remove the 'Icons' part:
@@ -188,7 +188,7 @@ $(function () {
   });
 
   // ...when the user arrives at the page with a hash
-  if(window.location.hash !== "") {
+  if(window.location.hash !== '') {
 
     $('#input-search').val((window.location.hash).slice(1))
     updateTypeahead()
