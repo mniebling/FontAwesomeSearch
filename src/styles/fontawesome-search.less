@@ -171,130 +171,114 @@ ul, li {
 }
 
 
-
-
 // Blank slate
-.blank-slate {
+// ----------------------------------------
+.c-blank-slate {
+  background-color: #efefef;
+  border: 1px dotted #999;
   display: none;
-
-  width: 300px;
   margin: 0 auto;
   padding: 15px 0;
   text-align: center;
-  border: 1px dotted #999;
-  background-color: #efefef;
+  width: 300px;
 }
 
 
-
-// About section
-.about {
+// "About" section
+// ----------------------------------------
+.c-about {
+  color: @color-about-text;
+  font-size: 14px;
+  left: 10px;
   position: fixed;
   top: 10px;
-  left: 10px;
-  font-size: 14px;
-  color: @color-about-text;
-}
 
-.about a,
-.about a:visited {
-  color: @color-about-text;
-  transition: color 0.3s;
-}
+  a, a:visited {
+    color: @color-about-text;
+    transition: color 0.3s;
+  }
 
-.about a:hover {
-  color: @color-about-hover;
+  a:hover {
+    color: @color-about-hover;
+  }
+
+  @media(max-width: 700px) {
+    display: none;
+  }
 }
 
 
 // Preview section
-.preview {
-  position: fixed;
-  top: 137px;
-  right: 10px;
-  width: 340px;
-  padding: 10px;
-
+// ----------------------------------------
+.c-preview {
   background-color: #eee;
+  padding: 10px;
+  position: fixed;
+  right: 10px;
+  top: 137px;
+  width: 340px;
+
+  a {
+    color: @color-preview-link;
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: @color-preview-hover;
+  }
+
+  @media(max-width: 1100px) {
+    display: none;
+  }
 }
 
-.preview-label {
-  font-size: 13px;
+.c-preview__label {
   color: #999;
-  text-transform: uppercase;
+  font-size: 13px;
   margin-bottom: 4px;
+  text-transform: uppercase;
+
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
 }
 
-.preview a {
-  color: @color-preview-link;
-  transition: color 0.3s;
-}
-
-.preview a:hover {
-  color: @color-preview-hover;
-}
-
-.preview-label:not(:first-child) {
-  margin-top: 15px;
-}
-
-.preview-icon-code,
-.preview-icon-unicode-point {
+.c-preview__icon-code,
+.c-preview__icon-unicode-point {
   font-size: 13px;
   font-family: 'Monaco', 'Consolas', monospace;
 }
 
-.preview-icon-value {
+.c-preview__icon-value {
   position: absolute;
   right: 12px;
   top: 12px;
 }
 
-.preview-contents {
+.c-preview__contents {
   display: none;
 }
 
-.preview-first-run {
+.c-preview__first-run {
   color: #777;
 }
 
 
 
-// Tips section
-.suggestions {
+// "Tips" section
+// ----------------------------------------
+.c-suggestions {
   position: fixed;
   top: 140px;
   left: 10px;
   font-size: 14px;
   color: #999;
-}
 
-.suggestions ul {
-  margin: 10px 0;
-}
-
-
-// Get Responsive!
-@media(max-width: 1100px) {
-  .preview {
-    display: none;
+  ul {
+    margin: 10px 0;
   }
 
-  tr td.icon-link {
-    display: table-cell;
-    text-align: right;
-    padding-right: 5px;
-  }
-}
-
-@media(max-width: 850px) {
-  .suggestions {
-    display: none;
-  }
-}
-
-@media(max-width: 700px) {
-  .about {
+  @media(max-width: 850px) {
     display: none;
   }
 }

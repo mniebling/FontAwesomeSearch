@@ -30,16 +30,16 @@ $(function () {
   // Initialize markup stuff
   $('.c-results').append(mustache.render(listTemplate, icons))
 
-	// Initialize a tooltip on each row, with the data-title attribute as the
-	// value of the tooltip (this will be the unicode FontAwesome string).
+  // Initialize a tooltip on each row, with the data-title attribute as the
+  // value of the tooltip (this will be the unicode FontAwesome string).
   $('.c-results__row').each(function () {
-		tooltip(this, $(this).data('title'))
-	})
+    tooltip(this, $(this).data('title'))
+  })
 
   // DOM references
   var $inputSearch = $('#input-search')
   var $brandCheck  = $('#check-include-brands')
-  var $blankSlate  = $('.blank-slate')
+  var $blankSlate  = $('#blank-slate')
 
 
   // Set up a dictionary of names to raw DOM elements
@@ -48,7 +48,7 @@ $(function () {
   $('.c-results__row').each(function (index) {
 
     // Grab the actual name and aliases
-    var nameAndAliases = $(this).find('.icon-name').text().trim()
+    var nameAndAliases = $(this).find('.c-results__row__icon-name').text().trim()
 
     // Append the folded versions if needed
     if (nameAndAliases.indexOf('-') !== -1) {
@@ -130,7 +130,7 @@ $(function () {
     var iconName  = this.id
     var iconURL   = 'http://fontawesome.io/icon/' + iconName
     var version   = $(this).data('version')
-    var $firstRun = $('.preview-first-run')
+    var $firstRun = $('#preview-first-run')
 
     // The prefixed string for display in the UI
     var iconUnicodeString = $(this).data('title')
@@ -143,17 +143,17 @@ $(function () {
 
     // Replace with velocity later?
     $firstRun.hide()
-    $('.preview-contents').show()
+    $('.c-preview__contents').show()
 
     // Populate the simple preview panel elements
-    $('.preview-icon-value').html(iconUnicodeString)
-    $('.preview-icon-name').text(iconName)
-    $('.preview-icon-unicode-point').text(iconUnicodePoint)
-    $('.preview-icon-created-version').text('v' + version)
-    $('.preview-icon-external-link').attr('href', iconURL)
+    $('.c-preview__icon-value').html(iconUnicodeString)
+    $('.c-preview__icon-name').text(iconName)
+    $('.c-preview__icon-unicode-point').text(iconUnicodePoint)
+    $('.c-preview__icon-created-version').text('v' + version)
+    $('.c-preview__icon-external-link').attr('href', iconURL)
 
     // Populate the categories list
-    $('.preview-icon-categories').empty()
+    $('.c-preview__icon-categories').empty()
 
     _.each(categories, function (value, index) {
 
@@ -173,7 +173,7 @@ $(function () {
         element = ', ' + element
       }
 
-      $('.preview-icon-categories').append(element)
+      $('.c-preview__icon-categories').append(element)
     });
   });
 
