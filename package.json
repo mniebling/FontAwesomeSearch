@@ -20,6 +20,7 @@
     "velocity-animate": "1.2.3"
   },
   "devDependencies": {
+    "autoprefixer": "6.3.1",
     "browser-sync": "2.11.1",
     "browserify": "13.0.0",
     "concat": "1.0.0",
@@ -30,6 +31,7 @@
     "lodash": "4.0.1",
     "onchange": "2.0.0",
     "parallelshell": "2.0.0",
+    "postcss-cli": "2.5.0",
     "rimraf": "2.5.1"
   },
   "scripts": {
@@ -46,6 +48,7 @@
 
     "prebuild:styles": "node tasks/prepare-styles.js",
     "build:styles": "lessc dist/styles.less > dist/compiled.css",
+    "postbuild:styles": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' --replace dist/compiled.css",
     "watch:styles": "onchange 'src/styles' -- npm run build:styles",
 
     "watch": "parallelshell 'npm run watch:static' 'npm run watch:js' 'npm run watch:styles'",
