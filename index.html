@@ -101,12 +101,12 @@
           data-version="{{created}}"
           data-categories="{{categories}}">
           <span class="c-results__row__icon u-icon">{{{unicodeString}}}</span>
-          <span class="icon-name">
+          <span class="c-results__row__icon-name">
             {{id}}{{#aliases}}, {{.}}{{/aliases}}
           </span>
-          <span class="icon-link">
-            <a href="http://fontawesome.io/icon/{{id}}">link</a>
-          </span>
+
+          <a class="c-results__row__icon-link" href="http://fontawesome.io/icon/{{id}}">link</a>
+
         </div>
       {{/.}}
 

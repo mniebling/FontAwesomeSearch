@@ -115,9 +115,9 @@ ul, li {
 
 .c-search__controls__brands-checkbox-label {
   color: @color-header-text-subtle;
-	cursor: pointer;
+  cursor: pointer;
   font-size: 14px;
-	margin-left: 2px;
+  margin-left: 2px;
   vertical-align: middle;
 }
 
@@ -148,25 +148,28 @@ ul, li {
   width: 20px;
 }
 
-
-// Todo: continue refactoring styles...
-.icon-name {
+.c-results__row__icon-name {
   font-size: 16px;
   line-height: 24px;
 }
 
-.icon-link {
-  display: none;
-}
-
-.icon-link a {
+.c-results__row__icon-link {
   color: #aaa;
+  display: none;
   transition: color 0.2s;
 
   :hover {
     color: #666;
   }
+
+  @media(max-width: 1100px) {
+    display: inline;
+    float: right;
+    line-height: 22px;
+    padding-right: 5px;
+  }
 }
+
 
 
 
