@@ -1,8 +1,7 @@
-// Velocity needs global jQuery right now
-window.jQuery = window.$ = require('jquery')
+var $        = require('jquery')
 var _        = require('lodash')
 var mustache = require('mustache')
-var Velocity = require('velocity-animate')
+var velocity = require('velocity-animate')
 
 // Fetch the JSON object with all the icon metadata
 var icons = require('./data.icons.js')
@@ -23,7 +22,7 @@ $(function () {
   // Mustache template
   var listTemplate = $('#listTemplate').html()
 
-  // Duration in milliseconds for Velocity animations
+  // Duration in milliseconds for velocity animations
   var DURATION = 75
 
   // Initialize markup stuff
@@ -31,30 +30,30 @@ $(function () {
   // $('tr').tooltip({ placement: 'left' });
 
   // DOM references
-  var $inputSearch = $('#input-search');
-  var $brandCheck  = $('#check-include-brands');
-  var $blankSlate  = $('.blank-slate');
+  var $inputSearch = $('#input-search')
+  var $brandCheck  = $('#check-include-brands')
+  var $blankSlate  = $('.blank-slate')
 
 
-  // Set up a dictionary of names and elements
+  // Set up a dictionary of names to raw DOM elements
   var nameToElement = {};
 
   $('tr.icon-row').each(function (index) {
 
     // Grab the actual name and aliases
-    var nameAndAliases = $(this).find('td.name').text().trim();
+    var nameAndAliases = $(this).find('td.name').text().trim()
 
     // Append the folded versions if needed
     if (nameAndAliases.indexOf('-') !== -1) {
-      nameAndAliases += ' ' + nameAndAliases.replace(/-/g, '%20');
+      nameAndAliases += ' ' + nameAndAliases.replace(/-/g, '%20')
     }
 
-    nameToElement[nameAndAliases] = this;
+    nameToElement[nameAndAliases] = this
 
     // We also need to do the first-run hiding of brand icons here
     // because we know the templated DOM elements are done rendering
     if (isBrandIcon(this)) {
-      $(this).hide();
+      $(this).hide()
     }
   });
 
@@ -62,36 +61,36 @@ $(function () {
   // I guess I'll write my own jankety typeahead
   function updateTypeahead () {
 
-    var target         = $inputSearch.val();
-    var listIsEmpty    = true;
-    var showBrandIcons = $brandCheck.is(':checked');
+    var target         = $inputSearch.val()
+    var listIsEmpty    = true
+    var showBrandIcons = $brandCheck.is(':checked')
 
     // Check rows for matches and show/hide accordingly
     for (var key in nameToElement) {
 
       // Hide if it doesn't match
       if (key.indexOf(target) === -1) {
-        fadeOutIfNecessary(nameToElement[key]);
+        fadeOutIfNecessary(nameToElement[key])
       }
 
       // Hide if we are not showing brand icons and it is a brand icon
       else if (!showBrandIcons && isBrandIcon(nameToElement[key])) {
-        fadeOutIfNecessary(nameToElement[key]);
+        fadeOutIfNecessary(nameToElement[key])
       }
 
       // Otherwise, show
       else {
-        fadeInIfNecessary(nameToElement[key]);
-        listIsEmpty = false;
+        fadeInIfNecessary(nameToElement[key])
+        listIsEmpty = false
       }
     }
 
     // If there are no rows visible, show the blank slate
     if(listIsEmpty) {
-      $blankSlate.show();
+      $blankSlate.show()
     }
     else {
-      $blankSlate.hide();
+      $blankSlate.hide()
     }
   }
 
@@ -99,22 +98,22 @@ $(function () {
   // Is this a brand icon? Pass a nameToElement[key] element to find out
   function isBrandIcon (elem) {
 
-    return ($(elem).data('categories').indexOf('Brand') != -1);
+    return ($(elem).data('categories').indexOf('Brand') != -1)
   }
 
 
-  // Velocity animation wrappers
+  // velocity animation wrappers
   function fadeOutIfNecessary (elem) {
 
     if(elem.style.display !== 'none') {
-      $.Velocity.animate(elem, 'fadeOut', { duration: DURATION });
+      velocity(elem, 'fadeOut', { duration: DURATION })
     }
   }
 
   function fadeInIfNecessary (elem) {
 
     if(elem.style.display === 'none') {
-      $.Velocity.animate(elem, 'fadeIn', { duration: DURATION });
+      velocity(elem, 'fadeIn', { duration: DURATION })
     }
   }
 
@@ -122,53 +121,53 @@ $(function () {
   // Show the preview for a row when it is clicked
   $('tr').on('click', function () {
 
-    var iconName  = this.id;
-    var iconURL   = 'http://fontawesome.io/icon/' + iconName;
-    var version   = $(this).data('version');
-    var $firstRun = $('.preview-first-run');
+    var iconName  = this.id
+    var iconURL   = 'http://fontawesome.io/icon/' + iconName
+    var version   = $(this).data('version')
+    var $firstRun = $('.preview-first-run')
 
     // The prefixed string for display in the UI
-    var iconUnicodeString = $(this).data('title');
+    var iconUnicodeString = $(this).data('title')
 
     // The actual 4-character code point
-    var iconUnicodePoint = $(this).data('unicode-point');
+    var iconUnicodePoint = $(this).data('unicode-point')
 
     // We need to break apart categories into an array
-    var categories = $(this).data('categories').split(',');
+    var categories = $(this).data('categories').split(',')
 
-    // Replace with Velocity later?
-    $firstRun.hide();
-    $('.preview-contents').show();
+    // Replace with velocity later?
+    $firstRun.hide()
+    $('.preview-contents').show()
 
     // Populate the simple preview panel elements
-    $('.preview-icon-value').html(iconUnicodeString);
-    $('.preview-icon-name').text(iconName);
-    $('.preview-icon-unicode-point').text(iconUnicodePoint);
-    $('.preview-icon-created-version').text('v' + version);
-    $('.preview-icon-external-link').attr('href', iconURL);
+    $('.preview-icon-value').html(iconUnicodeString)
+    $('.preview-icon-name').text(iconName)
+    $('.preview-icon-unicode-point').text(iconUnicodePoint)
+    $('.preview-icon-created-version').text('v' + version)
+    $('.preview-icon-external-link').attr('href', iconURL)
 
     // Populate the categories list
-    $('.preview-icon-categories').empty();
+    $('.preview-icon-categories').empty()
 
     $.each(categories, function (index, value) {
 
       // A category string comes from the data like 'Web Application Icons'.
       // For the link text, remove the 'Icons' part:
-      var linkText = value.replace(' Icons', '');
+      var linkText = value.replace(' Icons', '')
 
       // For the link URL, it needs to match the FontAwesome category URL,
       // so lowercase it and replace spaces with dashes:
-      var linkURL = 'http://fontawesome.io/icons/#' + linkText.toLowerCase().replace(' ', '-');
+      var linkURL = 'http://fontawesome.io/icons/#' + linkText.toLowerCase().replace(' ', '-')
 
       // Finally, build the element string and prepend a comma
       // if it's not the first element in the list.
-      var element = '<a href="' + linkURL + '">' + linkText + '</a>';
+      var element = '<a href="' + linkURL + '">' + linkText + '</a>'
 
       if (index > 0) {
-        element = ', ' + element;
+        element = ', ' + element
       }
 
-      $('.preview-icon-categories').append(element);
+      $('.preview-icon-categories').append(element)
     });
   });
 
@@ -176,22 +175,22 @@ $(function () {
   // Update the typeahead...
 
   // ...when the user types in the box
-  $inputSearch.on('keyup', updateTypeahead);
+  $inputSearch.on('keyup', updateTypeahead)
 
   // ...when the user toggles the brand filter
-  $brandCheck.on('change', updateTypeahead);
+  $brandCheck.on('change', updateTypeahead)
 
   // ...when the user changes the hash
   $(window).on('hashchange', function () {
 
-    $('#input-search').val((window.location.hash).slice(1));
-    updateTypeahead();
+    $('#input-search').val((window.location.hash).slice(1))
+    updateTypeahead()
   });
 
   // ...when the user arrives at the page with a hash
   if(window.location.hash !== "") {
 
-    $('#input-search').val((window.location.hash).slice(1));
-    updateTypeahead();
+    $('#input-search').val((window.location.hash).slice(1))
+    updateTypeahead()
   }
 });
