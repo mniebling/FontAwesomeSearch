@@ -3,8 +3,9 @@ var _        = require('lodash')
 var mustache = require('mustache')
 var velocity = require('velocity-animate')
 
-// Fetch the JSON object with all the icon metadata
-var icons = require('./data.icons.js')
+// App modules
+var icons   = require('./data.icons.js')
+var tooltip = require('./tooltip.js')
 
 // We want to display the icon list alphabetically
 icons = _.sortBy(icons, 'id')
@@ -27,8 +28,13 @@ $(function () {
   var listTemplate = $('#listTemplate').html()
 
   // Initialize markup stuff
-  $('.results').append(mustache.render(listTemplate, icons))
-  // $('tr').tooltip({ placement: 'left' });
+  $('.c-results').append(mustache.render(listTemplate, icons))
+
+	// Initialize a tooltip on each row, with the data-title attribute as the
+	// value of the tooltip (this will be the unicode FontAwesome string).
+  $('.c-results__row').each(function () {
+		tooltip(this, $(this).data('title'))
+	})
 
   // DOM references
   var $inputSearch = $('#input-search')
@@ -39,10 +45,10 @@ $(function () {
   // Set up a dictionary of names to raw DOM elements
   var nameToElement = {};
 
-  $('tr.icon-row').each(function (index) {
+  $('.c-results__row').each(function (index) {
 
     // Grab the actual name and aliases
-    var nameAndAliases = $(this).find('td.name').text().trim()
+    var nameAndAliases = $(this).find('.icon-name').text().trim()
 
     // Append the folded versions if needed
     if (nameAndAliases.indexOf('-') !== -1) {
@@ -119,7 +125,7 @@ $(function () {
 
 
   // Show the preview for a row when it is clicked
-  $('tr').on('click', function () {
+  $('.c-results__row').on('click', function () {
 
     var iconName  = this.id
     var iconURL   = 'http://fontawesome.io/icon/' + iconName
@@ -149,7 +155,7 @@ $(function () {
     // Populate the categories list
     $('.preview-icon-categories').empty()
 
-    _.each(categories, function (value, key, index) {
+    _.each(categories, function (value, index) {
 
       // A category string comes from the data like 'Web Application Icons'.
       // For the link text, remove the 'Icons' part:

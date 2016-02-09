@@ -3,28 +3,39 @@
 <head>
   <title>Font Awesome Search</title>
 
-  <link href="/FontAwesomeSearch/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="/FontAwesomeSearch/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Archivo+Narrow" />
-
-  <link rel="stylesheet" type="text/css" href="dist/compiled.css" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Archivo+Narrow">
+  <link rel="stylesheet" type="text/css" href="dist/compiled.css">
 </head>
 
 
 <body>
 
-    <section class="search-input">
-      <div class="search-controls">
-        <label for="input-search" class="search-label">Search FontAwesome:</label>
-        <input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
-        <input id="check-include-brands" type="checkbox" />
-        <label for="check-include-brands" class="checkbox-label">Include brand icons</label>
-      </div>
-    </section>
+  <section class="c-search">
+    <div class="c-search__controls">
+      <label
+				class="c-search__controls__label"
+				for="input-search">Search FontAwesome:</label>
+      <input
+				id="input-search"
+				class="c-search__controls__input"
+				placeholder="Start typing an icon name"
+				autofocus="autofocus">
+      <input
+				id="check-include-brands"
+				class="c-search__controls__brands-checkbox"
+				type="checkbox">
+      <label
+				class="c-search__controls__brands-checkbox-label"
+				for="check-include-brands">Include brand icons</label>
+    </div>
+  </section>
 
-    <section class="results">
-      <div class="blank-slate">No icons match that search.</div>
-    </section>
+
+  <section class="c-results">
+    <div class="blank-slate">No icons match that search.</div>
+  </section>
 
 
   <div class="about">
@@ -44,7 +55,7 @@
       <li>thumb</li>
       <li>-o</li>
     </ul>
-    And remember, search 'times' for <span class="icon">&#xf00d; &#xf057; &#xf05c;</span>
+    And remember, search 'times' for <span class="u-icon">&#xf00d; &#xf057; &#xf05c;</span>
   </div>
 
   <div class="preview">
@@ -54,7 +65,7 @@
       <div class="preview-label">Icon</div>
       <div>
         <span class="preview-icon-name"></span>
-        <span class="preview-icon-value icon icon-large"></span>
+        <span class="preview-icon-value u-icon icon-large"></span>
       </div>
 
       <div class="preview-label">HTML</div>
@@ -81,21 +92,24 @@
 
   <!-- Mustache template for list -->
   <script type="text/html" id="listTemplate">
-    <table class="results">
 
       {{#.}}
-        <tr class="icon-row" id="{{id}}" data-toggle="tooltip" data-unicode-point="{{unicode}}" data-title="{{{unicodeString}}}" data-version="{{created}}" data-categories="{{categories}}">
-          <td class="icon">{{{unicodeString}}}</td>
-          <td class="name">
+        <div id="{{id}}"
+          class="c-results__row"
+          data-unicode-point="{{unicode}}"
+          data-title="{{{unicodeString}}}"
+          data-version="{{created}}"
+          data-categories="{{categories}}">
+          <span class="c-results__row__icon u-icon">{{{unicodeString}}}</span>
+          <span class="icon-name">
             {{id}}{{#aliases}}, {{.}}{{/aliases}}
-          </td>
-          <td class="icon-link">
+          </span>
+          <span class="icon-link">
             <a href="http://fontawesome.io/icon/{{id}}">link</a>
-          </td>
-        </tr>
+          </span>
+        </div>
       {{/.}}
 
-    </table>
   </script>
 
 </body>
