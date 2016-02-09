@@ -10,8 +10,7 @@ less       = require('less')
 // sometimes this is important!
 var styleFiles = globConcat.sync([
   'src/styles/normalize.css',
-  'src/**/*.less',
-  'src/**/*.css'
+  'src/**/*.less'
 ])
 
 // Concatenate all CSS and LESS files into one, because the LESS compiler

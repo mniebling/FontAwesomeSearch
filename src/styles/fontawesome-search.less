@@ -3,7 +3,7 @@
 @color-header-text-main:     #E9ECF5;
 @color-header-text-subtle:   #BBBBBB;
 @color-header-border-bottom: #829FE0;
-@color-header-bg-fallback:   #4FCA9F;
+@color-header-bg-fallback:   #182848;
 @color-header-bg-stop-from:  #4B6CB7;
 @color-header-bg-stop-to:    #182848;
 @color-header-input-border:  #182542;
@@ -79,7 +79,7 @@ ul, li {
   position: fixed;
   top: 0;
   width: 100%;
-  .linear-gradient(@direction: 170deg; @stops: @color-header-bg-stop-from 10%, @color-header-bg-stop-to 90%;)
+  background: linear-gradient(170deg, @color-header-bg-stop-from 10%, @color-header-bg-stop-to 90%);
 }
 
 .c-search__controls {
