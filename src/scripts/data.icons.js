@@ -1,11 +1,8 @@
-(function (window) {
-  'use strict';
-
-  // 4.4.0
-  window.icondata = {
+// 4.4.0
+module.exports =
 
   // INSERT YAML-TO-JSON BELOW:
-  "icons": [
+  [
     {
       "name": "Glass",
       "id": "glass",
@@ -7144,7 +7141,4 @@
       ]
     }
   ]
-}
-
 // INSERT YAML-TO-JSON ABOVE
-}(this));

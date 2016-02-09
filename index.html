@@ -3,38 +3,49 @@
 <head>
   <title>Font Awesome Search</title>
 
-  <link href="/FontAwesomeSearch/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="/FontAwesomeSearch/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Archivo+Narrow" />
-
-  <link rel="stylesheet" type="text/css" href="compiled.styles.css" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Archivo+Narrow">
+  <link rel="stylesheet" type="text/css" href="dist/compiled.css">
 </head>
 
 
 <body>
 
-    <section class="search-input">
-      <div class="search-controls">
-        <label for="input-search" class="search-label">Search FontAwesome:</label>
-        <input id="input-search" placeholder="Start typing an icon name" autofocus="autofocus" />
-        <input id="check-include-brands" type="checkbox" />
-        <label for="check-include-brands" class="checkbox-label">Include brand icons</label>
-      </div>
-    </section>
+  <section class="c-search">
+    <div class="c-search__controls">
+      <label
+        class="c-search__controls__label"
+        for="input-search">Search FontAwesome:</label>
+      <input
+        id="input-search"
+        class="c-search__controls__input"
+        placeholder="Start typing an icon name"
+        autofocus="autofocus">
+      <input
+        id="check-include-brands"
+        class="c-search__controls__brands-checkbox"
+        type="checkbox">
+      <label
+        class="c-search__controls__brands-checkbox-label"
+        for="check-include-brands">Include brand icons</label>
+    </div>
+  </section>
 
-    <section class="results">
-      <div class="blank-slate">No icons match that search.</div>
-    </section>
+
+  <section class="c-results">
+    <div class="c-blank-slate" id="blank-slate">No icons match that search.</div>
+  </section>
 
 
-  <div class="about">
+  <div class="c-about">
     <ul>
       <li><a href="https://github.com/mniebling/FontAwesomeSearch">View this project on GitHub</a></li>
       <li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.4.0.</li>
     </ul>
   </div>
 
-  <div class="suggestions">
+  <div class="c-suggestions">
     For example, try searching...
     <ul>
       <li>arrow</li>
@@ -44,59 +55,61 @@
       <li>thumb</li>
       <li>-o</li>
     </ul>
-    And remember, search 'times' for <span class="icon">&#xf00d; &#xf057; &#xf05c;</span>
+    And remember, search 'times' for <span class="u-icon">&#xf00d; &#xf057; &#xf05c;</span>
   </div>
 
-  <div class="preview">
-    <div class="preview-first-run">Click a row for details.</div>
+  <div class="c-preview">
+    <div class="c-preview__first-run" id="preview-first-run">Click a row for details.</div>
 
-    <div class="preview-contents">
-      <div class="preview-label">Icon</div>
+    <div class="c-preview__contents">
+      <div class="c-preview__label">Icon</div>
       <div>
-        <span class="preview-icon-name"></span>
-        <span class="preview-icon-value icon icon-large"></span>
+        <span class="c-preview__icon-name"></span>
+        <span class="c-preview__icon-value u-icon u-icon-large"></span>
       </div>
 
-      <div class="preview-label">HTML</div>
-      <div class="preview-icon-code">
-        &lt;i class="fa fa-<span class="preview-icon-name"></span>"&gt;&lt;/i&gt;
+      <div class="c-preview__label">HTML</div>
+      <div class="c-preview__icon-code">
+        &lt;i class="fa fa-<span class="c-preview__icon-name"></span>"&gt;&lt;/i&gt;
       </div>
 
-      <div class="preview-label">Unicode</div>
-      <div class="preview-icon-unicode-point"></div>
+      <div class="c-preview__label">Unicode</div>
+      <div class="c-preview__icon-unicode-point"></div>
 
-      <div class="preview-label">Created In</div>
-      <div class="preview-icon-created-version"></div>
+      <div class="c-preview__label">Created In</div>
+      <div class="c-preview__icon-created-version"></div>
 
-      <div class="preview-label">Categories</div>
-      <div class="preview-icon-categories"></div>
+      <div class="c-preview__label">Categories</div>
+      <div class="c-preview__icon-categories"></div>
 
-      <div class="preview-label">FA Website Link</div>
-      <a class="preview-icon-external-link" href="">Click here</a>
+      <div class="c-preview__label">FA Website Link</div>
+      <a class="c-preview__icon-external-link" href="">Click here</a>
     </div>
   </div>
 
-  <script src="compiled.bower.js"></script>
-  <script src="compiled.app.js"></script>
+  <script src="dist/bundled.js"></script>
 
 
   <!-- Mustache template for list -->
   <script type="text/html" id="listTemplate">
-    <table class="results">
 
-      {{#icons}}
-        <tr class="icon-row" id="{{id}}" data-toggle="tooltip" data-unicode-point="{{unicode}}" data-title="{{{unicodeString}}}" data-version="{{created}}" data-categories="{{categories}}">
-          <td class="icon">{{{unicodeString}}}</td>
-          <td class="name">
+      {{#.}}
+        <div id="{{id}}"
+          class="c-results__row"
+          data-unicode-point="{{unicode}}"
+          data-title="{{{unicodeString}}}"
+          data-version="{{created}}"
+          data-categories="{{categories}}">
+          <span class="c-results__row__icon u-icon">{{{unicodeString}}}</span>
+          <span class="c-results__row__icon-name">
             {{id}}{{#aliases}}, {{.}}{{/aliases}}
-          </td>
-          <td class="icon-link">
-            <a href="http://fontawesome.io/icon/{{id}}">link</a>
-          </td>
-        </tr>
-      {{/icons}}
+          </span>
 
-    </table>
+          <a class="c-results__row__icon-link" href="http://fontawesome.io/icon/{{id}}">link</a>
+
+        </div>
+      {{/.}}
+
   </script>
 
 </body>

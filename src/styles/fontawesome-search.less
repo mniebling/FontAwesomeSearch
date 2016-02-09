@@ -1,0 +1,284 @@
+// Branding colors
+// ----------------------------------------
+@color-header-text-main:     #E9ECF5;
+@color-header-text-subtle:   #BBBBBB;
+@color-header-border-bottom: #829FE0;
+@color-header-bg-fallback:   #182848;
+@color-header-bg-stop-from:  #4B6CB7;
+@color-header-bg-stop-to:    #182848;
+@color-header-input-border:  #182542;
+@color-header-input-outline: #C7D2EB;
+
+@color-about-text:  #C7D2EB;
+@color-about-hover: #ADBBD9;
+
+@color-preview-link:  #3365D6;
+@color-preview-hover: #1F3C80;
+
+@color-black: #333333;
+
+
+// FontAwesome include
+// ----------------------------------------
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+
+  src: url('font/fontawesome-webfont.eot?v=4.4.0');
+  src: url('font/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'),
+       url('font/fontawesome-webfont.woff2?v=4.4.0') format('woff2'),
+       url('font/fontawesome-webfont.woff?v=4.4.0') format('woff'),
+       url('font/fontawesome-webfont.ttf?v=4.4.0') format('truetype'),
+       url('font/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+}
+
+
+// Structural, resets & utilities
+// ----------------------------------------
+body {
+  font-family: 'Archivo Narrow', Arial, sans-serif;
+}
+
+// Fix jumping layout when scrollbar appears/disappears
+html {
+  overflow-y: scroll;
+}
+
+// Sane box model calculations
+* {
+  box-sizing: border-box;
+}
+
+// Sane bulleted lists
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.u-icon {
+  font-family: 'FontAwesome';
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.u-icon-large {
+  font-size: 28px;
+}
+
+
+// Search controls
+// ----------------------------------------
+.c-search {
+  color: @color-header-text-main;
+  background-color: @color-header-bg-fallback;
+  border-bottom: 2px solid @color-header-border-bottom;
+  padding: 20px 0 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(170deg, @color-header-bg-stop-from 10%, @color-header-bg-stop-to 90%);
+}
+
+.c-search__controls {
+  margin: 0 auto;
+  width: 340px;
+}
+
+.c-search__controls__label {
+  display: block;
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+.c-search__controls__input {
+  border: 1px solid @color-header-input-border;
+  color: @color-black;
+  font-family: 'Archivo Narrow', Arial, sans-serif;
+  font-size: 16px;
+  margin: 0 auto 10px auto;
+  padding: 5px;
+  transition: box-shadow 0.3s;
+  width: 100%;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 6px 1px @color-header-input-outline;
+  }
+}
+
+.c-search__controls__brands-checkbox {
+  vertical-align: middle;
+}
+
+.c-search__controls__brands-checkbox-label {
+  color: @color-header-text-subtle;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+
+// Search results
+// ----------------------------------------
+.c-results {
+  margin: 140px auto 0 auto;
+  padding: 0;
+  text-align: left;
+  width: 340px;
+}
+
+.c-results__row {
+  border-top: 1px solid #CCC;
+  padding: 2px 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #F7F7F7;
+  }
+}
+
+.c-results__row__icon {
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
+  width: 20px;
+}
+
+.c-results__row__icon-name {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.c-results__row__icon-link {
+  color: #aaa;
+  display: none;
+  transition: color 0.2s;
+
+  :hover {
+    color: #666;
+  }
+
+  @media(max-width: 1100px) {
+    display: inline;
+    float: right;
+    line-height: 22px;
+    padding-right: 5px;
+  }
+}
+
+
+// Blank slate
+// ----------------------------------------
+.c-blank-slate {
+  background-color: #efefef;
+  border: 1px dotted #999;
+  display: none;
+  margin: 0 auto;
+  padding: 15px 0;
+  text-align: center;
+  width: 300px;
+}
+
+
+// "About" section
+// ----------------------------------------
+.c-about {
+  color: @color-about-text;
+  font-size: 14px;
+  left: 10px;
+  position: fixed;
+  top: 10px;
+
+  a, a:visited {
+    color: @color-about-text;
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: @color-about-hover;
+  }
+
+  @media(max-width: 700px) {
+    display: none;
+  }
+}
+
+
+// Preview section
+// ----------------------------------------
+.c-preview {
+  background-color: #eee;
+  padding: 10px;
+  position: fixed;
+  right: 10px;
+  top: 137px;
+  width: 340px;
+
+  a {
+    color: @color-preview-link;
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: @color-preview-hover;
+  }
+
+  @media(max-width: 1100px) {
+    display: none;
+  }
+}
+
+.c-preview__label {
+  color: #999;
+  font-size: 13px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
+}
+
+.c-preview__icon-code,
+.c-preview__icon-unicode-point {
+  font-size: 13px;
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.c-preview__icon-value {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.c-preview__contents {
+  display: none;
+}
+
+.c-preview__first-run {
+  color: #777;
+}
+
+
+
+// "Tips" section
+// ----------------------------------------
+.c-suggestions {
+  position: fixed;
+  top: 140px;
+  left: 10px;
+  font-size: 14px;
+  color: #999;
+
+  ul {
+    margin: 10px 0;
+  }
+
+  @media(max-width: 850px) {
+    display: none;
+  }
+}
