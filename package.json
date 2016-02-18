@@ -41,15 +41,15 @@
     "prebuild": "npm run clean -s",
     "build": "npm run build:static && npm run build:js && npm run build:styles",
 
-    "build:static": "copyup --flatten node_modules/font-awesome/fonts/* dist",
+    "build:static": "copyfiles -u 2 node_modules/font-awesome/fonts/* dist",
     "watch:static": "onchange 'index.html' 'src/font' -- npm run build:static",
 
     "build:js": "browserify src/scripts/main.js > dist/bundled.js",
     "watch:js": "onchange 'src/scripts' -- npm run build:js",
 
     "prebuild:styles": "node tasks/prepare-styles.js",
-    "build:styles": "lessc dist/styles.less > dist/compiled.css",
-    "postbuild:styles": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' --replace dist/compiled.css",
+    "build:styles": "lessc dist/styles.less dist/css/compiled.css",
+    "postbuild:styles": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' --replace dist/css/compiled.css",
     "watch:styles": "onchange 'src/styles' -- npm run build:styles",
 
     "watch": "parallelshell 'npm run watch:static' 'npm run watch:js' 'npm run watch:styles'",
