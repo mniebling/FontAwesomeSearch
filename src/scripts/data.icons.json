@@ -1,8 +1,5 @@
-// 4.4.0
-module.exports =
-
-  // INSERT YAML-TO-JSON BELOW:
-  [
+{
+  "icons": [
     {
       "name": "Glass",
       "id": "glass",
@@ -146,7 +143,8 @@ module.exports =
       "filter": [
         "blocks",
         "squares",
-        "boxes"
+        "boxes",
+        "grid"
       ],
       "categories": [
         "Text Editor Icons"
@@ -160,7 +158,8 @@ module.exports =
       "filter": [
         "blocks",
         "squares",
-        "boxes"
+        "boxes",
+        "grid"
       ],
       "categories": [
         "Text Editor Icons"
@@ -195,7 +194,9 @@ module.exports =
         "todo",
         "agree",
         "accept",
-        "confirm"
+        "confirm",
+        "tick",
+        "ok"
       ],
       "categories": [
         "Web Application Icons"
@@ -213,7 +214,8 @@ module.exports =
       "filter": [
         "close",
         "exit",
-        "x"
+        "x",
+        "cross"
       ],
       "categories": [
         "Web Application Icons"
@@ -431,7 +433,8 @@ module.exports =
       "unicode": "f021",
       "created": 1,
       "filter": [
-        "reload"
+        "reload",
+        "sync"
       ],
       "categories": [
         "Web Application Icons",
@@ -855,7 +858,10 @@ module.exports =
       "unicode": "f043",
       "created": 1,
       "filter": [
-        "raindrop"
+        "raindrop",
+        "waterdrop",
+        "drop",
+        "droplet"
       ],
       "categories": [
         "Web Application Icons"
@@ -2029,7 +2035,8 @@ module.exports =
       "filter": [
         "protect",
         "admin",
-        "password"
+        "password",
+        "lock"
       ],
       "categories": [
         "Web Application Icons"
@@ -2644,7 +2651,8 @@ module.exports =
       "filter": [
         "more",
         "dropdown",
-        "menu"
+        "menu",
+        "triangle down"
       ],
       "categories": [
         "Directional Icons"
@@ -2655,6 +2663,9 @@ module.exports =
       "id": "caret-up",
       "unicode": "f0d8",
       "created": 2,
+      "filter": [
+        "triangle up"
+      ],
       "categories": [
         "Directional Icons"
       ]
@@ -2666,7 +2677,8 @@ module.exports =
       "created": 2,
       "filter": [
         "previous",
-        "back"
+        "back",
+        "triangle left"
       ],
       "categories": [
         "Directional Icons"
@@ -2679,7 +2691,8 @@ module.exports =
       "created": 2,
       "filter": [
         "next",
-        "forward"
+        "forward",
+        "triangle right"
       ],
       "categories": [
         "Directional Icons"
@@ -2917,7 +2930,8 @@ module.exports =
       "created": 3,
       "filter": [
         "transfer",
-        "arrows"
+        "arrows",
+        "arrow"
       ],
       "categories": [
         "Web Application Icons",
@@ -3918,7 +3932,8 @@ module.exports =
       "filter": [
         "protect",
         "admin",
-        "password"
+        "password",
+        "lock"
       ],
       "categories": [
         "Web Application Icons"
@@ -5459,9 +5474,7 @@ module.exports =
       "unicode": "f1cd",
       "created": 4.1,
       "aliases": [
-        {
-          "life-bouy": "Deprecated - remove in 5.0.0"
-        },
+        "life-bouy",
         "life-buoy",
         "life-saver",
         "support"
@@ -5818,6 +5831,9 @@ module.exports =
       "id": "cc-amex",
       "unicode": "f1f3",
       "created": 4.2,
+      "filter": [
+        "amex"
+      ],
       "categories": [
         "Brand Icons",
         "Payment Icons"
@@ -5866,6 +5882,12 @@ module.exports =
       "id": "trash",
       "unicode": "f1f8",
       "created": 4.2,
+      "filter": [
+        "garbage",
+        "delete",
+        "remove",
+        "hide"
+      ],
       "categories": [
         "Web Application Icons"
       ]
@@ -6436,6 +6458,10 @@ module.exports =
       "id": "user-plus",
       "unicode": "f234",
       "created": 4.3,
+      "filter": [
+        "sign up",
+        "signup"
+      ],
       "categories": [
         "Web Application Icons"
       ]
@@ -6924,6 +6950,9 @@ module.exports =
       "id": "safari",
       "unicode": "f267",
       "created": 4.4,
+      "filter": [
+        "browser"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -6933,6 +6962,9 @@ module.exports =
       "id": "chrome",
       "unicode": "f268",
       "created": 4.4,
+      "filter": [
+        "browser"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -6942,6 +6974,9 @@ module.exports =
       "id": "firefox",
       "unicode": "f269",
       "created": 4.4,
+      "filter": [
+        "browser"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -6960,6 +6995,10 @@ module.exports =
       "id": "internet-explorer",
       "unicode": "f26b",
       "created": 4.4,
+      "filter": [
+        "browser",
+        "ie"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -7044,6 +7083,9 @@ module.exports =
       "id": "industry",
       "unicode": "f275",
       "created": 4.4,
+      "filter": [
+        "factory"
+      ],
       "categories": [
         "Web Application Icons"
       ]
@@ -7139,6 +7181,203 @@ module.exports =
       "categories": [
         "Brand Icons"
       ]
+    },
+    {
+      "name": "reddit Alien",
+      "id": "reddit-alien",
+      "unicode": "f281",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Edge Browser",
+      "id": "edge",
+      "unicode": "f282",
+      "created": 4.5,
+      "filter": [
+        "browser",
+        "ie"
+      ],
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Credit Card",
+      "id": "credit-card-alt",
+      "unicode": "f283",
+      "created": 4.5,
+      "filter": [
+        "money",
+        "buy",
+        "debit",
+        "checkout",
+        "purchase",
+        "payment",
+        "credit card"
+      ],
+      "categories": [
+        "Payment Icons",
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Codie Pie",
+      "id": "codiepie",
+      "unicode": "f284",
+      "created": 4.5,
+      "url": "codiepie.com",
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "MODX",
+      "id": "modx",
+      "unicode": "f285",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Fort Awesome",
+      "id": "fort-awesome",
+      "unicode": "f286",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "USB",
+      "id": "usb",
+      "unicode": "f287",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Product Hunt",
+      "id": "product-hunt",
+      "unicode": "f288",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Mixcloud",
+      "id": "mixcloud",
+      "unicode": "f289",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Scribd",
+      "id": "scribd",
+      "unicode": "f28a",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Pause Circle",
+      "id": "pause-circle",
+      "unicode": "f28b",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Pause Circle Outlined",
+      "id": "pause-circle-o",
+      "unicode": "f28c",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Stop Circle",
+      "id": "stop-circle",
+      "unicode": "f28d",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Stop Circle Outlined",
+      "id": "stop-circle-o",
+      "unicode": "f28e",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Shopping Bag",
+      "id": "shopping-bag",
+      "unicode": "f290",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Shopping Basket",
+      "id": "shopping-basket",
+      "unicode": "f291",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Hashtag",
+      "id": "hashtag",
+      "unicode": "f292",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Bluetooth",
+      "id": "bluetooth",
+      "unicode": "f293",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons",
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Bluetooth",
+      "id": "bluetooth-b",
+      "unicode": "f294",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons",
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Percent",
+      "id": "percent",
+      "unicode": "f295",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
     }
   ]
-// INSERT YAML-TO-JSON ABOVE
+}

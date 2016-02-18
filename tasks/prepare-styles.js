@@ -10,6 +10,7 @@ less       = require('less')
 // sometimes this is important!
 var styleFiles = globConcat.sync([
   'src/styles/normalize.css',
+  'node_modules/font-awesome/css/font-awesome.css',
   'src/**/*.less'
 ])
 

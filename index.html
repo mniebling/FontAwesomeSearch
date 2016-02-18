@@ -6,7 +6,7 @@
   <link href="/FontAwesomeSearch/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Archivo+Narrow">
-  <link rel="stylesheet" type="text/css" href="dist/compiled.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/compiled.css">
 </head>
 
 
@@ -41,7 +41,7 @@
   <div class="c-about">
     <ul>
       <li><a href="https://github.com/mniebling/FontAwesomeSearch">View this project on GitHub</a></li>
-      <li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.4.0.</li>
+      <li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> version is 4.5.0.</li>
     </ul>
   </div>
 
@@ -55,7 +55,10 @@
       <li>thumb</li>
       <li>-o</li>
     </ul>
-    And remember, search 'times' for <span class="u-icon">&#xf00d; &#xf057; &#xf05c;</span>
+    <span>And remember, search 'times' for</span>
+    <span class="fa fa-times"></span>
+    <span class="fa fa-times-circle"></span>
+    <span class="fa fa-times-circle-o"></span>
   </div>
 
   <div class="c-preview">
@@ -65,7 +68,7 @@
       <div class="c-preview__label">Icon</div>
       <div>
         <span class="c-preview__icon-name"></span>
-        <span class="c-preview__icon-value u-icon u-icon-large"></span>
+        <span class="c-preview__icon-value fa fa-3x"></span>
       </div>
 
       <div class="c-preview__label">HTML</div>
@@ -100,7 +103,7 @@
           data-title="{{{unicodeString}}}"
           data-version="{{created}}"
           data-categories="{{categories}}">
-          <span class="c-results__row__icon u-icon">{{{unicodeString}}}</span>
+          <span class="c-results__row__icon fa">{{{unicodeString}}}</span>
           <span class="c-results__row__icon-name">
             {{id}}{{#aliases}}, {{.}}{{/aliases}}
           </span>

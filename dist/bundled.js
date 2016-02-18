@@ -28784,11 +28784,8 @@ return function (global, window, document, undefined) {
 Velocity, however, doesn't make this distinction. Thus, converting to or from the % unit with these subproperties
 will produce an inaccurate conversion value. The same issue exists with the cx/cy attributes of SVG circles and ellipses. */
 },{}],5:[function(require,module,exports){
-// 4.4.0
-module.exports =
-
-  // INSERT YAML-TO-JSON BELOW:
-  [
+module.exports={
+  "icons": [
     {
       "name": "Glass",
       "id": "glass",
@@ -28932,7 +28929,8 @@ module.exports =
       "filter": [
         "blocks",
         "squares",
-        "boxes"
+        "boxes",
+        "grid"
       ],
       "categories": [
         "Text Editor Icons"
@@ -28946,7 +28944,8 @@ module.exports =
       "filter": [
         "blocks",
         "squares",
-        "boxes"
+        "boxes",
+        "grid"
       ],
       "categories": [
         "Text Editor Icons"
@@ -28981,7 +28980,9 @@ module.exports =
         "todo",
         "agree",
         "accept",
-        "confirm"
+        "confirm",
+        "tick",
+        "ok"
       ],
       "categories": [
         "Web Application Icons"
@@ -28999,7 +29000,8 @@ module.exports =
       "filter": [
         "close",
         "exit",
-        "x"
+        "x",
+        "cross"
       ],
       "categories": [
         "Web Application Icons"
@@ -29217,7 +29219,8 @@ module.exports =
       "unicode": "f021",
       "created": 1,
       "filter": [
-        "reload"
+        "reload",
+        "sync"
       ],
       "categories": [
         "Web Application Icons",
@@ -29641,7 +29644,10 @@ module.exports =
       "unicode": "f043",
       "created": 1,
       "filter": [
-        "raindrop"
+        "raindrop",
+        "waterdrop",
+        "drop",
+        "droplet"
       ],
       "categories": [
         "Web Application Icons"
@@ -30815,7 +30821,8 @@ module.exports =
       "filter": [
         "protect",
         "admin",
-        "password"
+        "password",
+        "lock"
       ],
       "categories": [
         "Web Application Icons"
@@ -31430,7 +31437,8 @@ module.exports =
       "filter": [
         "more",
         "dropdown",
-        "menu"
+        "menu",
+        "triangle down"
       ],
       "categories": [
         "Directional Icons"
@@ -31441,6 +31449,9 @@ module.exports =
       "id": "caret-up",
       "unicode": "f0d8",
       "created": 2,
+      "filter": [
+        "triangle up"
+      ],
       "categories": [
         "Directional Icons"
       ]
@@ -31452,7 +31463,8 @@ module.exports =
       "created": 2,
       "filter": [
         "previous",
-        "back"
+        "back",
+        "triangle left"
       ],
       "categories": [
         "Directional Icons"
@@ -31465,7 +31477,8 @@ module.exports =
       "created": 2,
       "filter": [
         "next",
-        "forward"
+        "forward",
+        "triangle right"
       ],
       "categories": [
         "Directional Icons"
@@ -31703,7 +31716,8 @@ module.exports =
       "created": 3,
       "filter": [
         "transfer",
-        "arrows"
+        "arrows",
+        "arrow"
       ],
       "categories": [
         "Web Application Icons",
@@ -32704,7 +32718,8 @@ module.exports =
       "filter": [
         "protect",
         "admin",
-        "password"
+        "password",
+        "lock"
       ],
       "categories": [
         "Web Application Icons"
@@ -34245,9 +34260,7 @@ module.exports =
       "unicode": "f1cd",
       "created": 4.1,
       "aliases": [
-        {
-          "life-bouy": "Deprecated - remove in 5.0.0"
-        },
+        "life-bouy",
         "life-buoy",
         "life-saver",
         "support"
@@ -34604,6 +34617,9 @@ module.exports =
       "id": "cc-amex",
       "unicode": "f1f3",
       "created": 4.2,
+      "filter": [
+        "amex"
+      ],
       "categories": [
         "Brand Icons",
         "Payment Icons"
@@ -34652,6 +34668,12 @@ module.exports =
       "id": "trash",
       "unicode": "f1f8",
       "created": 4.2,
+      "filter": [
+        "garbage",
+        "delete",
+        "remove",
+        "hide"
+      ],
       "categories": [
         "Web Application Icons"
       ]
@@ -35222,6 +35244,10 @@ module.exports =
       "id": "user-plus",
       "unicode": "f234",
       "created": 4.3,
+      "filter": [
+        "sign up",
+        "signup"
+      ],
       "categories": [
         "Web Application Icons"
       ]
@@ -35710,6 +35736,9 @@ module.exports =
       "id": "safari",
       "unicode": "f267",
       "created": 4.4,
+      "filter": [
+        "browser"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -35719,6 +35748,9 @@ module.exports =
       "id": "chrome",
       "unicode": "f268",
       "created": 4.4,
+      "filter": [
+        "browser"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -35728,6 +35760,9 @@ module.exports =
       "id": "firefox",
       "unicode": "f269",
       "created": 4.4,
+      "filter": [
+        "browser"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -35746,6 +35781,10 @@ module.exports =
       "id": "internet-explorer",
       "unicode": "f26b",
       "created": 4.4,
+      "filter": [
+        "browser",
+        "ie"
+      ],
       "categories": [
         "Brand Icons"
       ]
@@ -35830,6 +35869,9 @@ module.exports =
       "id": "industry",
       "unicode": "f275",
       "created": 4.4,
+      "filter": [
+        "factory"
+      ],
       "categories": [
         "Web Application Icons"
       ]
@@ -35925,10 +35967,206 @@ module.exports =
       "categories": [
         "Brand Icons"
       ]
+    },
+    {
+      "name": "reddit Alien",
+      "id": "reddit-alien",
+      "unicode": "f281",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Edge Browser",
+      "id": "edge",
+      "unicode": "f282",
+      "created": 4.5,
+      "filter": [
+        "browser",
+        "ie"
+      ],
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Credit Card",
+      "id": "credit-card-alt",
+      "unicode": "f283",
+      "created": 4.5,
+      "filter": [
+        "money",
+        "buy",
+        "debit",
+        "checkout",
+        "purchase",
+        "payment",
+        "credit card"
+      ],
+      "categories": [
+        "Payment Icons",
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Codie Pie",
+      "id": "codiepie",
+      "unicode": "f284",
+      "created": 4.5,
+      "url": "codiepie.com",
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "MODX",
+      "id": "modx",
+      "unicode": "f285",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Fort Awesome",
+      "id": "fort-awesome",
+      "unicode": "f286",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "USB",
+      "id": "usb",
+      "unicode": "f287",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Product Hunt",
+      "id": "product-hunt",
+      "unicode": "f288",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Mixcloud",
+      "id": "mixcloud",
+      "unicode": "f289",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Scribd",
+      "id": "scribd",
+      "unicode": "f28a",
+      "created": 4.5,
+      "categories": [
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Pause Circle",
+      "id": "pause-circle",
+      "unicode": "f28b",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Pause Circle Outlined",
+      "id": "pause-circle-o",
+      "unicode": "f28c",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Stop Circle",
+      "id": "stop-circle",
+      "unicode": "f28d",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Stop Circle Outlined",
+      "id": "stop-circle-o",
+      "unicode": "f28e",
+      "created": 4.5,
+      "categories": [
+        "Video Player Icons"
+      ]
+    },
+    {
+      "name": "Shopping Bag",
+      "id": "shopping-bag",
+      "unicode": "f290",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Shopping Basket",
+      "id": "shopping-basket",
+      "unicode": "f291",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Hashtag",
+      "id": "hashtag",
+      "unicode": "f292",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
+    },
+    {
+      "name": "Bluetooth",
+      "id": "bluetooth",
+      "unicode": "f293",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons",
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Bluetooth",
+      "id": "bluetooth-b",
+      "unicode": "f294",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons",
+        "Brand Icons"
+      ]
+    },
+    {
+      "name": "Percent",
+      "id": "percent",
+      "unicode": "f295",
+      "created": 4.5,
+      "categories": [
+        "Web Application Icons"
+      ]
     }
   ]
-// INSERT YAML-TO-JSON ABOVE
-
+}
 },{}],6:[function(require,module,exports){
 var $        = require('jquery')
 var _        = require('lodash')
@@ -35936,7 +36174,7 @@ var mustache = require('mustache')
 var velocity = require('velocity-animate')
 
 // App modules
-var icons   = require('./data.icons.js')
+var icons   = require('./data.icons.json').icons
 var tooltip = require('./tooltip.js')
 
 // We want to display the icon list alphabetically
@@ -35975,7 +36213,7 @@ $(function () {
 
 
   // Set up a dictionary of names to raw DOM elements
-  var nameToElement = {};
+  var nameToElement = {}
 
   $('.c-results__row').each(function (index) {
 
@@ -35994,7 +36232,7 @@ $(function () {
     if (isBrandIcon(this)) {
       $(this).hide()
     }
-  });
+  })
 
 
   // I guess I'll write my own jankety typeahead
@@ -36106,8 +36344,8 @@ $(function () {
       }
 
       $('.c-preview__icon-categories').append(element)
-    });
-  });
+    })
+  })
 
 
   // Update the typeahead...
@@ -36123,7 +36361,7 @@ $(function () {
 
     $('#input-search').val((window.location.hash).slice(1))
     updateTypeahead()
-  });
+  })
 
   // ...when the user arrives at the page with a hash
   if(window.location.hash !== '') {
@@ -36131,9 +36369,9 @@ $(function () {
     $('#input-search').val((window.location.hash).slice(1))
     updateTypeahead()
   }
-});
+})
 
-},{"./data.icons.js":5,"./tooltip.js":7,"jquery":1,"lodash":2,"mustache":3,"velocity-animate":4}],7:[function(require,module,exports){
+},{"./data.icons.json":5,"./tooltip.js":7,"jquery":1,"lodash":2,"mustache":3,"velocity-animate":4}],7:[function(require,module,exports){
 var $ = require('jquery')
 
 var $tipElement
@@ -36149,7 +36387,7 @@ var showTooltip = function () {
 // Insert the tooltip element into the DOM
 var createHoverTooltip = function (event) {
 
-  var template = '<div class="c-hover-tooltip js-active-hover-tooltip">' + event.data + '</div>'
+  var template = '<div class="c-hover-tooltip js-active-hover-tooltip fa fa-2x">' + event.data + '</div>'
 
   // Add the tooltip element to the document and get a handle to it
   $tipElement = $('body')
@@ -36159,7 +36397,7 @@ var createHoverTooltip = function (event) {
   // We want to position the tooltip relative to the row, regardless of whether
   // an element inside the row gets hovered. We can't ignore pointer events on
   // the children, though, because one of them is a link.
-  var row;
+  var row
 
   if (event.target.classList.contains('c-results__row')) {
     row = event.target
@@ -36195,9 +36433,9 @@ var createHoverTooltip = function (event) {
 // Destroy the tooltip element when it's no longer needed
 var destroyHoverTooltip = function () {
 
-  $tipElement.remove();
+  $tipElement.remove()
   window.clearTimeout(tooltipTimeout)
-};
+}
 
 
 // Just export a constructor that assigns the event handlers to the elements
