@@ -36149,7 +36149,7 @@ var showTooltip = function () {
 // Insert the tooltip element into the DOM
 var createHoverTooltip = function (event) {
 
-  var template = '<div class="c-hover-tooltip js-active-hover-tooltip">' + event.data + '</div>'
+  var template = '<div class="c-hover-tooltip js-active-hover-tooltip fa fa-2x">' + event.data + '</div>'
 
   // Add the tooltip element to the document and get a handle to it
   $tipElement = $('body')
@@ -36159,7 +36159,7 @@ var createHoverTooltip = function (event) {
   // We want to position the tooltip relative to the row, regardless of whether
   // an element inside the row gets hovered. We can't ignore pointer events on
   // the children, though, because one of them is a link.
-  var row;
+  var row
 
   if (event.target.classList.contains('c-results__row')) {
     row = event.target
@@ -36195,9 +36195,9 @@ var createHoverTooltip = function (event) {
 // Destroy the tooltip element when it's no longer needed
 var destroyHoverTooltip = function () {
 
-  $tipElement.remove();
+  $tipElement.remove()
   window.clearTimeout(tooltipTimeout)
-};
+}
 
 
 // Just export a constructor that assigns the event handlers to the elements

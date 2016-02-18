@@ -1,35 +1,31 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-
 html {
-  font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
-
 /**
  * Remove default margin.
  */
-
 body {
   margin: 0;
 }
-
 /* HTML5 display definitions
    ========================================================================== */
-
 /**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
  * Correct `block` display not defined for `details` or `summary` in IE 10/11
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-
 article,
 aside,
 details,
@@ -45,119 +41,95 @@ section,
 summary {
   display: block;
 }
-
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-
 audio,
 canvas,
 progress,
 video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
 }
-
 /**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-
 audio:not([controls]) {
   display: none;
   height: 0;
 }
-
 /**
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-
 [hidden],
 template {
   display: none;
 }
-
 /* Links
    ========================================================================== */
-
 /**
  * Remove the gray background color from active links in IE 10.
  */
-
 a {
   background-color: transparent;
 }
-
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-
 a:active,
 a:hover {
   outline: 0;
 }
-
 /* Text-level semantics
    ========================================================================== */
-
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
-
 abbr[title] {
   border-bottom: 1px dotted;
 }
-
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-
 b,
 strong {
   font-weight: bold;
 }
-
 /**
  * Address styling not present in Safari and Chrome.
  */
-
 dfn {
   font-style: italic;
 }
-
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
-
 /**
  * Address styling not present in IE 8/9.
  */
-
 mark {
   background: #ff0;
   color: #000;
 }
-
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-
 small {
   font-size: 80%;
 }
-
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-
 sub,
 sup {
   font-size: 75%;
@@ -165,67 +137,50 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
-
 sup {
   top: -0.5em;
 }
-
 sub {
   bottom: -0.25em;
 }
-
 /* Embedded content
    ========================================================================== */
-
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-
 img {
   border: 0;
 }
-
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-
 svg:not(:root) {
   overflow: hidden;
 }
-
 /* Grouping content
    ========================================================================== */
-
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
-
 figure {
   margin: 1em 40px;
 }
-
 /**
  * Address differences between Firefox and other browsers.
  */
-
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
-
 /**
  * Contain overflow in all browsers.
  */
-
 pre {
   overflow: auto;
 }
-
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-
 code,
 kbd,
 pre,
@@ -233,52 +188,46 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-
 /* Forms
    ========================================================================== */
-
 /**
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
  * styling of `select`, unless a `border` property is set.
  */
-
 /**
  * 1. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-
 button,
 input,
 optgroup,
 select,
 textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
 }
-
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-
 button {
   overflow: visible;
 }
-
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
  * All other form control elements do not inherit `text-transform` values.
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-
 button,
 select {
   text-transform: none;
 }
-
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
@@ -286,43 +235,37 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-
 button,
-html input[type="button"], /* 1 */
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
 }
-
 /**
  * Re-set default cursor for disabled elements.
  */
-
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
-
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-
 input {
   line-height: normal;
 }
-
 /**
  * It's recommended that you don't attempt to style these elements.
  * Firefox's implementation doesn't respect box-sizing, padding, or width.
@@ -330,97 +273,82 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
-
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-
 input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
   box-sizing: content-box;
 }
-
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-
 /**
  * Define consistent border, margin, and padding.
  */
-
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
-
 /**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-
 legend {
-  border: 0; /* 1 */
-  padding: 0; /* 2 */
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
-
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-
 textarea {
   overflow: auto;
 }
-
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-
 optgroup {
   font-weight: bold;
 }
-
 /* Tables
    ========================================================================== */
-
 /**
  * Remove most spacing between table cells.
  */
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 td,
 th {
   padding: 0;
@@ -547,31 +475,26 @@ th {
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 :root .fa-rotate-90,
@@ -579,7 +502,8 @@ th {
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 .fa-stack {
   position: relative;
@@ -2511,154 +2435,104 @@ th {
 .fa-percent:before {
   content: "\f295";
 }
-// Branding colors
-// ----------------------------------------
-@color-header-text-main:     #E9ECF5;
-@color-header-text-subtle:   #BBBBBB;
-@color-header-border-bottom: #829FE0;
-@color-header-bg-fallback:   #182848;
-@color-header-bg-stop-from:  #4B6CB7;
-@color-header-bg-stop-to:    #182848;
-@color-header-input-border:  #182542;
-@color-header-input-outline: #C7D2EB;
-
-@color-about-text:  #C7D2EB;
-@color-about-hover: #ADBBD9;
-
-@color-preview-link:  #3365D6;
-@color-preview-hover: #1F3C80;
-
-@color-black: #333333;
-
-
-// Structural, resets & utilities
-// ----------------------------------------
 body {
   font-family: 'Archivo Narrow', Arial, sans-serif;
 }
-
-// Fix jumping layout when scrollbar appears/disappears
 html {
   overflow-y: scroll;
 }
-
-// Sane box model calculations
 * {
   box-sizing: border-box;
 }
-
-// Sane bulleted lists
-ul, li {
+ul,
+li {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
-
-// Search controls
-// ----------------------------------------
 .c-search {
-  color: @color-header-text-main;
-  background-color: @color-header-bg-fallback;
-  border-bottom: 2px solid @color-header-border-bottom;
+  color: #E9ECF5;
+  background-color: #182848;
+  border-bottom: 2px solid #829FE0;
   padding: 20px 0 15px 0;
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(170deg, @color-header-bg-stop-from 10%, @color-header-bg-stop-to 90%);
+  background: linear-gradient(170deg, #4B6CB7 10%, #182848 90%);
 }
-
 .c-search__controls {
   margin: 0 auto;
   width: 340px;
 }
-
 .c-search__controls__label {
   display: block;
   font-size: 18px;
   margin: 0 0 5px 0;
 }
-
 .c-search__controls__input {
-  border: 1px solid @color-header-input-border;
-  color: @color-black;
+  border: 1px solid #182542;
+  color: #333333;
   font-family: 'Archivo Narrow', Arial, sans-serif;
   font-size: 16px;
   margin: 0 auto 10px auto;
   padding: 5px;
   transition: box-shadow 0.3s;
   width: 100%;
-
-  &:focus {
-    outline: 0;
-    box-shadow: 0 0 6px 1px @color-header-input-outline;
-  }
 }
-
+.c-search__controls__input:focus {
+  outline: 0;
+  box-shadow: 0 0 6px 1px #C7D2EB;
+}
 .c-search__controls__brands-checkbox {
   vertical-align: middle;
 }
-
 .c-search__controls__brands-checkbox-label {
-  color: @color-header-text-subtle;
+  color: #BBBBBB;
   cursor: pointer;
   font-size: 14px;
   margin-left: 2px;
   vertical-align: middle;
 }
-
-
-// Search results
-// ----------------------------------------
 .c-results {
   margin: 140px auto 0 auto;
   padding: 0;
   text-align: left;
   width: 340px;
 }
-
 .c-results__row {
   border-top: 1px solid #CCC;
   padding: 2px 0;
   cursor: pointer;
-
-  &:hover {
-    background-color: #F7F7F7;
-  }
 }
-
+.c-results__row:hover {
+  background-color: #F7F7F7;
+}
 .c-results__row__icon {
   display: inline-block;
   text-align: center;
   margin-right: 5px;
   width: 20px;
 }
-
 .c-results__row__icon-name {
   font-size: 16px;
   line-height: 24px;
 }
-
 .c-results__row__icon-link {
   color: #aaa;
   display: none;
   transition: color 0.2s;
-
-  :hover {
-    color: #666;
-  }
-
-  @media(max-width: 1100px) {
+}
+.c-results__row__icon-link :hover {
+  color: #666;
+}
+@media (max-width: 1100px) {
+  .c-results__row__icon-link {
     display: inline;
     float: right;
     line-height: 22px;
     padding-right: 5px;
   }
 }
-
-
-// Blank slate
-// ----------------------------------------
 .c-blank-slate {
   background-color: #efefef;
   border: 1px dotted #999;
@@ -2668,34 +2542,26 @@ ul, li {
   text-align: center;
   width: 300px;
 }
-
-
-// "About" section
-// ----------------------------------------
 .c-about {
-  color: @color-about-text;
+  color: #C7D2EB;
   font-size: 14px;
   left: 10px;
   position: fixed;
   top: 10px;
-
-  a, a:visited {
-    color: @color-about-text;
-    transition: color 0.3s;
-  }
-
-  a:hover {
-    color: @color-about-hover;
-  }
-
-  @media(max-width: 700px) {
+}
+.c-about a,
+.c-about a:visited {
+  color: #C7D2EB;
+  transition: color 0.3s;
+}
+.c-about a:hover {
+  color: #ADBBD9;
+}
+@media (max-width: 700px) {
+  .c-about {
     display: none;
   }
 }
-
-
-// Preview section
-// ----------------------------------------
 .c-preview {
   background-color: #eee;
   padding: 10px;
@@ -2703,74 +2569,72 @@ ul, li {
   right: 10px;
   top: 137px;
   width: 340px;
-
-  a {
-    color: @color-preview-link;
-    transition: color 0.3s;
-  }
-
-  a:hover {
-    color: @color-preview-hover;
-  }
-
-  @media(max-width: 1100px) {
+}
+.c-preview a {
+  color: #3365D6;
+  transition: color 0.3s;
+}
+.c-preview a:hover {
+  color: #1F3C80;
+}
+@media (max-width: 1100px) {
+  .c-preview {
     display: none;
   }
 }
-
 .c-preview__label {
   color: #999;
   font-size: 13px;
   margin-bottom: 4px;
   text-transform: uppercase;
-
-  &:not(:first-child) {
-    margin-top: 15px;
-  }
 }
-
+.c-preview__label:not(:first-child) {
+  margin-top: 15px;
+}
 .c-preview__icon-code,
 .c-preview__icon-unicode-point {
   font-size: 13px;
   font-family: 'Monaco', 'Consolas', monospace;
 }
-
 .c-preview__icon-value {
   position: absolute;
   right: 12px;
   top: 12px;
 }
-
 .c-preview__contents {
   display: none;
 }
-
 .c-preview__first-run {
   color: #777;
 }
-
-
-
-// "Tips" section
-// ----------------------------------------
 .c-suggestions {
   position: fixed;
   top: 140px;
   left: 10px;
   font-size: 14px;
   color: #999;
-
-  ul {
-    margin: 10px 0;
-  }
-
-  @media(max-width: 850px) {
+}
+.c-suggestions ul {
+  margin: 10px 0;
+}
+@media (max-width: 850px) {
+  .c-suggestions {
     display: none;
   }
 }
-// Variables & keyframes
-@tooltip-background-color: rgba(0,0,0,.8);
-
+@-webkit-keyframes 'fadeInToInlineBlock' {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: inline-block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes 'fadeInToInlineBlock' {
   0% {
     display: none;
@@ -2784,10 +2648,8 @@ ul, li {
     opacity: 1;
   }
 }
-
-// Tooltip body
 .c-hover-tooltip {
-  background-color: @tooltip-background-color;
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
   color: #fff;
   display: none;
@@ -2796,26 +2658,22 @@ ul, li {
   opacity: 0;
   word-wrap: break-word;
   z-index: 200;
-
-  // Added to the tooltip to show it
-  &.c-hover-tooltip--visible {
-    display: inline-block;
-    animation: 'fadeInToInlineBlock' 0.15s linear;
-    opacity: 1;
-  }
-
-  // The triangles:
-  &:after {
-    border-color: transparent @tooltip-background-color;
-    border-style: solid;
-    content: '';
-    display: inline-block;
-    position: absolute;
-
-    // Arrows should be on the right
-    border-width: 4px 0 4px 4px;
-    left: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+}
+.c-hover-tooltip.c-hover-tooltip--visible {
+  display: inline-block;
+  -webkit-animation: 'fadeInToInlineBlock' 0.15s linear;
+          animation: 'fadeInToInlineBlock' 0.15s linear;
+  opacity: 1;
+}
+.c-hover-tooltip:after {
+  border-color: transparent rgba(0, 0, 0, 0.8);
+  border-style: solid;
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-width: 4px 0 4px 4px;
+  left: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
