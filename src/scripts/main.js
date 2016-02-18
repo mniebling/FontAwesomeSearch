@@ -4,7 +4,7 @@ var mustache = require('mustache')
 var velocity = require('velocity-animate')
 
 // App modules
-var icons   = require('./data.icons.js')
+var icons   = require('./data.icons.json').icons
 var tooltip = require('./tooltip.js')
 
 // We want to display the icon list alphabetically
@@ -43,7 +43,7 @@ $(function () {
 
 
   // Set up a dictionary of names to raw DOM elements
-  var nameToElement = {};
+  var nameToElement = {}
 
   $('.c-results__row').each(function (index) {
 
@@ -62,7 +62,7 @@ $(function () {
     if (isBrandIcon(this)) {
       $(this).hide()
     }
-  });
+  })
 
 
   // I guess I'll write my own jankety typeahead
@@ -174,8 +174,8 @@ $(function () {
       }
 
       $('.c-preview__icon-categories').append(element)
-    });
-  });
+    })
+  })
 
 
   // Update the typeahead...
@@ -191,7 +191,7 @@ $(function () {
 
     $('#input-search').val((window.location.hash).slice(1))
     updateTypeahead()
-  });
+  })
 
   // ...when the user arrives at the page with a hash
   if(window.location.hash !== '') {
@@ -199,4 +199,4 @@ $(function () {
     $('#input-search').val((window.location.hash).slice(1))
     updateTypeahead()
   }
-});
+})
