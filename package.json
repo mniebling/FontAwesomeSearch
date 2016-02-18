@@ -1,7 +1,7 @@
 {
   "name": "FontAwesomeSearch",
   "version": "1.0.0",
-  "description": "FontAwesomeSearch\r =================\r FontAwesomeSearch is a simple [website](http://mniebling.github.io/FontAwesomeSearch/) that allows you to perform text searches on the descriptions of FontAwesome icons.",
+  "description": "Easily search and copy FontAwesome icons.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/mniebling/FontAwesomeSearch",
   "dependencies": {
+    "font-awesome": "4.5.0",
     "jquery": "2.2.0",
     "lodash": "4.0.1",
     "mustache": "2.2.1",
@@ -40,7 +41,7 @@
     "prebuild": "npm run clean -s",
     "build": "npm run build:static && npm run build:js && npm run build:styles",
 
-    "build:static": "copyup --flatten src/font/* dist",
+    "build:static": "copyup --flatten node_modules/font-awesome/fonts/* dist",
     "watch:static": "onchange 'index.html' 'src/font' -- npm run build:static",
 
     "build:js": "browserify src/scripts/main.js > dist/bundled.js",

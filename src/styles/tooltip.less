@@ -2,58 +2,50 @@
 @tooltip-background-color: rgba(0,0,0,.8);
 
 @keyframes 'fadeInToInlineBlock' {
-	0% {
-		display: none;
-		opacity: 0;
-	}
-	1% {
-		display: inline-block;
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: inline-block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 // Tooltip body
 .c-hover-tooltip {
-	background-color: @tooltip-background-color;
-	border-radius: 4px;
-	color: #fff;
-	display: none;
-	font-size: 12px;
-	padding: 5px 10px;
-	position: absolute;
-	opacity: 0;
-	word-wrap: break-word;
-	z-index: 200;
+  background-color: @tooltip-background-color;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  padding: 5px 10px;
+  position: absolute;
+  opacity: 0;
+  word-wrap: break-word;
+  z-index: 200;
 
-	// It's an FA icon
-	font-family: 'FontAwesome';
-	font-size: 28px;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  // Added to the tooltip to show it
+  &.c-hover-tooltip--visible {
+    display: inline-block;
+    animation: 'fadeInToInlineBlock' 0.15s linear;
+    opacity: 1;
+  }
 
-	// Added to the tooltip to show it
-	&.c-hover-tooltip--visible {
-		display: inline-block;
-		animation: 'fadeInToInlineBlock' 0.15s linear;
-		opacity: 1;
-	}
+  // The triangles:
+  &:after {
+    border-color: transparent @tooltip-background-color;
+    border-style: solid;
+    content: '';
+    display: inline-block;
+    position: absolute;
 
-	// The triangles:
-	&:after {
-		border-color: transparent @tooltip-background-color;
-		border-style: solid;
-		content: '';
-		display: inline-block;
-		position: absolute;
-
-		// Arrows should be on the right
-		border-width: 4px 0 4px 4px;
-		left: 100%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+    // Arrows should be on the right
+    border-width: 4px 0 4px 4px;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
