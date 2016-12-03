@@ -40,6 +40,7 @@ less.render(lessString)
 		postcss(postcssPlugins)
 			.process(output.css)
 			.then(result => {
-				fs.writeFileSync('dist/compiled.css', result.css)
+				fs.mkdirSync('dist/css')
+				fs.writeFileSync('dist/css/compiled.css', result.css)
 			})
 	})

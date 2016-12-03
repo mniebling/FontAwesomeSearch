@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/mniebling/FontAwesomeSearch",
   "dependencies": {
-    "font-awesome": "4.5.0",
+    "font-awesome": "4.7.0",
     "jquery": "2.2.0",
     "lodash": "4.13.1",
     "mustache": "2.2.1",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "6.3.6",
-    "browser-sync": "2.12.10",
+    "browser-sync": "2.18.2",
     "browserify": "13.0.0",
     "concat": "1.0.0",
     "copyfiles": "0.2.1",
