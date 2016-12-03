@@ -14,26 +14,27 @@
   },
   "homepage": "https://github.com/mniebling/FontAwesomeSearch",
   "dependencies": {
-    "font-awesome": "4.5.0",
-    "jquery": "2.2.0",
-    "lodash": "4.0.1",
-    "mustache": "2.2.1",
-    "velocity-animate": "1.2.3"
+    "font-awesome": "4.7.0",
+    "jquery": "3.1.1",
+    "lodash": "4.17.2",
+    "mustache": "2.3.0",
+    "normalize.css": "5.0.0",
+    "velocity-animate": "1.3.1"
   },
   "devDependencies": {
-    "autoprefixer": "6.3.1",
-    "browser-sync": "2.11.1",
+    "autoprefixer": "6.5.3",
+    "browser-sync": "2.18.2",
     "browserify": "13.0.0",
     "concat": "1.0.0",
-    "copyfiles": "0.2.1",
+    "copyfiles": "1.0.0",
     "glob-concat": "1.0.1",
-    "jshint": "2.9.1",
-    "less": "2.5.3",
-    "lodash": "4.0.1",
+    "graceful-fs": "4.1.10",
+    "less": "2.7.1",
+    "lodash": "4.17.2",
     "onchange": "2.0.0",
     "parallelshell": "2.0.0",
-    "postcss-cli": "2.5.0",
-    "request": "2.69.0",
+    "postcss": "5.0.21",
+    "request": "2.79.0",
     "rimraf": "2.5.1",
     "yamljs": "0.2.5"
   },
@@ -49,9 +50,7 @@
     "build:js": "browserify src/scripts/main.js > dist/bundled.js",
     "watch:js": "onchange 'src/scripts' -- npm run build:js",
 
-    "prebuild:styles": "node tasks/prepare-styles.js",
-    "build:styles": "lessc dist/styles.less dist/css/compiled.css",
-    "postbuild:styles": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' --replace dist/css/compiled.css",
+    "build:styles": "node tasks/styles.js",
     "watch:styles": "onchange 'src/styles' -- npm run build:styles",
 
     "watch": "parallelshell 'npm run watch:static' 'npm run watch:js' 'npm run watch:styles'",
@@ -60,8 +59,6 @@
 
     "dev": "npm run build && parallelshell 'npm run watch' 'npm run serve'",
 
-    "etl": "node tasks/icons-etl.js",
-
-    "lint": "jshint src/*.js"
+    "etl": "node tasks/icons-etl.js"
   }
 }
